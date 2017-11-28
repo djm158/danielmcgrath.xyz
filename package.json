@@ -1,0 +1,31 @@
+{
+  "name": "danielmcgrath.xyz",
+  "description": "Personal website for Dan McGrath",
+  "version": "1.0.0",
+  "author": "Dan McGrath <daniel.mcgrath9@gmail.com>",
+  "dependencies": {
+    "gatsby": "^1.9.101",
+    "gatsby-link": "^1.6.24",
+    "gatsby-plugin-react-helmet": "^1.0.8",
+    "gatsby-plugin-sharp": "^1.6.19",
+    "gatsby-plugin-styled-components": "^1.0.5",
+    "gatsby-plugin-typography": "^1.7.10",
+    "gatsby-source-filesystem": "^1.5.8",
+    "gatsby-transformer-remark": "^1.7.19",
+    "typography-theme-lincoln": "^0.15.11"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "prettier": "^1.8.0"
+  }
+}
