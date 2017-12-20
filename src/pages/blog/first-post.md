@@ -31,3 +31,9 @@ Let's get serious now. Throw everything I just told you out the window.
 <iframe src="https://giphy.com/embed/l0HFkA6omUyjVYqw8" width="480" height="357" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/baby-money-little-rascals-l0HFkA6omUyjVYqw8"></a></p>
 
 Well, not really. But start to think about features. Do you want a blog? You don't want to be creating html text for every post do you? I suggest sticking with static sites unless you need some server side interaction (form handling, etc). Static site generators are a dime a dozen. I went with **[Gatsby](https://www.gatsbyjs.org/)** because I wanted to learn **[React](https://reactjs.org/)**, make a blog, and easily deploy my site to a free static hosting provider. 
+
+### Hosting
+
+Hosting static sites is dead simple these days. I'm currently using [Netlify](https://www.netlify.com/). The process of setting up a static site with a custom domain was easy and fast, and came with a free SSL cert. Another option is [Github Pages](https://pages.github.com/), which works seamlessly with [Jekyll](https://jekyllrb.com/). Browse around, do a few Google searches, and pick one that works with you (and is hopefully _free_);
+
+Good luck!

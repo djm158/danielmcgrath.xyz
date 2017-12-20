@@ -75,7 +75,7 @@ const SideBar = () => (
     <SideNav>
       <LinkList>
          <li><SideLink to="/">Home</SideLink></li>
-         <li><SideLink to="/projects">Projects</SideLink></li>
+         {/* <li><SideLink to="/projects">Projects</SideLink></li> */}
          <li><SideLink to="/blog/">Blog</SideLink></li>
          <li><SideLink to="/about">About</SideLink></li>
       </LinkList>

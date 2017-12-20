@@ -21,10 +21,6 @@ const IndexPage = () => (
         Checkout my <a target="_blank" href="https://github.com/djm158">GitHub</a> for some of my
       work!
     </p>
-      {/* <p>This site is under construction, check back soon!</p> */}
-      <a href="https://docs.google.com/presentation/d/e/2PACX-1vS5kurHDBGOWYU45laldQYm8-GQex8vNywHCPd6CVSmCqjM1bYv8i3Y4cmD0W48VhlscaKjQlhsXaWe/pub?start=false&loop=false&delayms=3000">
-      <p>PILI SLIDES</p>
-    </a>
     </ContentWrapper>
 )
 
