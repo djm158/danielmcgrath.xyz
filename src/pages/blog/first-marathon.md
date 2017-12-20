@@ -15,4 +15,4 @@ My training started with a [4 mile run in June](https://www.strava.com/activitie
 
 ### Lessons learned
 
-I'm already thinking about signing up for my next marathon. I'm going to start building my mileage base up again as soon as my legs heal completely. 
+I'm already thinking about signing up for my next marathon. I'm going to start building my mileage base up again as soon as my legs heal completely. I'm going to be smart about this and do it as slow as possible. I'd like to be doing at least 60 miles per week 10 weeks out from the marathon. Most importantly I do not want to get injured. Injuries have crippled my running career going back to high school. Staying healthy will not only allow me to perform at my best but also improves my day to day life. As insane as my obsession with running may be, it keeps me sane and allows me to feel healthy both physically and mentally. I learned a lot about myself during those ten miles of struggling. I now know I can push myself way further than I thought possible and have the confidence to take a second stab at the marathon. Looking forward to 2018. 
