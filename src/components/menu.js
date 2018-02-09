@@ -16,6 +16,7 @@ const Overlay = styled.div`
   transition: opacity .35s, visibility .35s, height .35s;
   overflow: hidden;
   padding-top: 60px;
+  z-index: 10;
 `
 
 const Header = styled.header`
