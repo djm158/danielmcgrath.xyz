@@ -113,7 +113,7 @@ class Menu extends React.Component {
             <SideNav>
               <LinkList>
                 <li><SideLink onClick={this.handleClick} to="/">Home</SideLink></li>
-                {/* <li><SideLink onClick={this.handleClick} to="/projects">Projects</SideLink></li> */}
+                <li><SideLink onClick={this.handleClick} to="/projects">Projects</SideLink></li>
                 <li><SideLink onClick={this.handleClick} to="/blog/">Blog</SideLink></li>
                 <li><SideLink onClick={this.handleClick} to="/about">About</SideLink></li>
               </LinkList>
