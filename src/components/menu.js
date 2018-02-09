@@ -106,7 +106,7 @@ class Menu extends React.Component {
           <Header>
             <div><a onClick={this.handleClick}>Menu</a></div>
             <div><Logo /></div>
-            <div>|||</div>
+            <div>&nbsp; &nbsp; &nbsp; &nbsp;</div>
 
           </Header>
           <Overlay open={this.state.isToggle}>

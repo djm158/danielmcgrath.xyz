@@ -3,14 +3,7 @@ import Link from 'gatsby-link'
 import styled from 'styled-components'
 import emoji from '../images/dan-emoji.png'
 import drone from '../images/drone.png'
-
-const ResponsiveImage = styled.img`
-  position: relative;
-  float: left;
-  width:  200px;
-  height: 200px;
-  margin: 10px 20px;
-`
+import ContentWrapper from '../layouts/contentwrapper'
 
 const Card = styled.div`
 /* offset-x | offset-y | blur-radius | spread-radius | color */
@@ -20,7 +13,7 @@ const Card = styled.div`
   flex-direction: column;
   float: left;
   text-align: center;
-  margin 0 20px;
+  margin 20px;
 `
 
 const CardImg = styled.div`
@@ -37,7 +30,7 @@ const CardContent = styled.div`
 `
 
 const ProjectsPage = () => (
-  <div>
+  <ContentWrapper>
     <Card>
       <CardImg src={emoji}></CardImg>
       <CardContent>
@@ -53,7 +46,7 @@ const ProjectsPage = () => (
         <p><a href="https://github.com/dgtc1012/ECE1160_Final_Project">See Github</a></p>
       </CardContent>
     </Card>
-  </div>
+  </ContentWrapper>
 )
 
 export default ProjectsPage
