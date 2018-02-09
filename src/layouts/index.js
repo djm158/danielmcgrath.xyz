@@ -11,6 +11,8 @@ import Logo from '../components/logo'
 import SideBar from './sidebar'
 
 import Menu from '../components/menu'
+import favicon from '../images/favicon.ico'
+
 
 const PageWrapper = styled.div`
     display: flex;
@@ -62,7 +64,9 @@ const TemplateWrapper = ({ children }) => (
         { name: 'description', content: 'Personal website for Dan McGrath' },
         { name: 'keywords', content: 'embedded-systems, web-development' },
         { property: 'og:title', content: 'Dan McGrath' },
+        { favicon: favicon }
       ]}
+      link={ [{rel: "shortcut icon", type: "image/x-icon", href: icon}] }
     />
     <SideBar />
     <MainWrapper>
