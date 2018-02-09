@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 import emoji from '../images/dan-emoji.png'
+import drone from '../images/drone.png'
 
 const ResponsiveImage = styled.img`
   position: relative;
@@ -9,7 +10,6 @@ const ResponsiveImage = styled.img`
   width:  200px;
   height: 200px;
   margin: 10px 20px;
-
 `
 
 const Card = styled.div`
@@ -19,9 +19,8 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   float: left;
-  &hover: {
-    background: red;
-  }
+  text-align: center;
+  margin 0 20px;
 `
 
 const CardImg = styled.div`
@@ -30,24 +29,29 @@ const CardImg = styled.div`
   background-size: contain;
   width:  200px;
   height: 200px;
-  /* get background from props */
   background-image: url(${props => props.src});
-  /* background: url('../images/dan-emoji.png'); */
 `
 
 const CardContent = styled.div`
+  width: 200px;
 `
 
 const ProjectsPage = () => (
   <div>
     <Card>
       <CardImg src={emoji}></CardImg>
-      <CardImg></CardImg>
       <CardContent>
-        <span>card title</span>
-        <p>card text blah blah blah</p>
+        <span>danielmcgrath.xyz</span>
+        <p><a href="https://github.com/djm158/danielmcgrath.xyz">This website!</a></p>
       </CardContent>
+    </Card>
 
+    <Card>
+      <CardImg src={drone}></CardImg>
+      <CardContent>
+        <span>gesture controlled quadcopter</span>
+        <p><a href="https://github.com/dgtc1012/ECE1160_Final_Project">See Github</a></p>
+      </CardContent>
     </Card>
   </div>
 )
