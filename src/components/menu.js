@@ -16,6 +16,7 @@ const Overlay = styled.div`
   transition: opacity .35s, visibility .35s, height .35s;
   overflow: hidden;
   padding-top: 60px;
+  z-index: 10;
 `
 
 const Header = styled.header`
@@ -112,7 +113,7 @@ class Menu extends React.Component {
             <SideNav>
               <LinkList>
                 <li><SideLink onClick={this.handleClick} to="/">Home</SideLink></li>
-                {/* <li><SideLink onClick={this.handleClick} to="/projects">Projects</SideLink></li> */}
+                <li><SideLink onClick={this.handleClick} to="/projects">Projects</SideLink></li>
                 <li><SideLink onClick={this.handleClick} to="/blog/">Blog</SideLink></li>
                 <li><SideLink onClick={this.handleClick} to="/about">About</SideLink></li>
               </LinkList>
