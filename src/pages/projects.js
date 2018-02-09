@@ -2,52 +2,62 @@ import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 
-import ContentWrapper from '../layouts/contentwrapper'
+const ResponsiveImage = styled.img`
+  position: relative;
+  float: left;
+  width:  200px;
+  height: 200px;
+  margin: 10px 20px;
 
-const Container = styled.div`
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 0 1rem;
 `
 
-const ResponsiveImg = styled.img`
-  max-width: 100%;
-  max-height: 100%;
-  margin: 0;
-`
-
-const Grid = styled.div`
+const Card = styled.div`
+/* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 5px 0px; /*, rgba(0, 0, 0, 0.12) 0px 2px 10px 0px*/
+  max-height: 360px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
+  float: left;
+  &hover: {
+    background: red;
+  }
 `
 
-const Cell = styled.div`
-  margin: 0.5rem;
-  width: 20%;
-  height: 6rem;
+const CardImg = styled.div`
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:  800px;
+  height: 200px;
+  /* get background from props */
+  background: url(${props => props.src});
+`
 
-  ${'' /* > img {
-    height: 6rem;
-    width: 6rem;
-  } */}
+const CardContent = styled.div`
 `
 
 const ProjectsPage = () => (
-  <Container>
-    <h1>Projects</h1>
-    <Grid>
-      <Cell>
-        <ResponsiveImg src="drone.png" alt="drone image" />
-      </Cell>
-      <Cell>
-        <ResponsiveImg src="list.png" alt="drone image" />
-      </Cell>
-      <Cell>
-        <ResponsiveImg src="dan-emoji.png" alt="drone image" />
-      </Cell>
-    </Grid>
-  </Container>
+  <div>
+    <Card>
+      <CardImg src="drone.png"></CardImg>
+      <CardContent>
+        <span>card title</span>
+        <p>card text blah blah blah</p>
+      </CardContent>
+
+    </Card>
+    {/* <ResponsiveImage src="drone.png" />
+    <ResponsiveImage src="drone.png" />
+
+    <ResponsiveImage src="dan-emoji.png" />
+    <ResponsiveImage src="dan-emoji.png" />
+
+
+    <ResponsiveImage src="list.png" />
+    <ResponsiveImage src="list.png" />
+    <ResponsiveImage src="list.png" />
+    <ResponsiveImage src="list.png" /> */}
+  </div>
 )
 
 export default ProjectsPage
