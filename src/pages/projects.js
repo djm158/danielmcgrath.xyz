@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
+import emoji from '../images/dan-emoji.png'
 
 const ResponsiveImage = styled.img`
   position: relative;
@@ -26,11 +27,12 @@ const Card = styled.div`
 const CardImg = styled.div`
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
-  width:  800px;
+  background-size: contain;
+  width:  200px;
   height: 200px;
   /* get background from props */
-  background: url(${props => props.src});
+  background-image: url(${props => props.src});
+  /* background: url('../images/dan-emoji.png'); */
 `
 
 const CardContent = styled.div`
@@ -39,24 +41,14 @@ const CardContent = styled.div`
 const ProjectsPage = () => (
   <div>
     <Card>
-      <CardImg src="drone.png"></CardImg>
+      <CardImg src={emoji}></CardImg>
+      <CardImg></CardImg>
       <CardContent>
         <span>card title</span>
         <p>card text blah blah blah</p>
       </CardContent>
 
     </Card>
-    {/* <ResponsiveImage src="drone.png" />
-    <ResponsiveImage src="drone.png" />
-
-    <ResponsiveImage src="dan-emoji.png" />
-    <ResponsiveImage src="dan-emoji.png" />
-
-
-    <ResponsiveImage src="list.png" />
-    <ResponsiveImage src="list.png" />
-    <ResponsiveImage src="list.png" />
-    <ResponsiveImage src="list.png" /> */}
   </div>
 )
 
