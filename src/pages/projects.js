@@ -8,12 +8,13 @@ import ContentWrapper from '../layouts/contentwrapper'
 const Card = styled.div`
 /* offset-x | offset-y | blur-radius | spread-radius | color */
   box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 5px 0px; /*, rgba(0, 0, 0, 0.12) 0px 2px 10px 0px*/
-  max-height: 360px;
+  height: 320px;
   display: flex;
   flex-direction: column;
   float: left;
   text-align: center;
-  margin 20px;
+  margin: 20px;
+  width: 200px;
 `
 
 const CardImg = styled.div`
@@ -27,10 +28,22 @@ const CardImg = styled.div`
 
 const CardContent = styled.div`
   width: 200px;
+  padding-top: 10px;
+`
+
+const FlexWraper = styled.div`
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 567px) {
+    flex-flow: column;
+  }
 `
 
 const ProjectsPage = () => (
   <ContentWrapper>
+    <FlexWraper>
     <Card>
       <CardImg src={emoji}></CardImg>
       <CardContent>
@@ -46,6 +59,8 @@ const ProjectsPage = () => (
         <p><a href="https://github.com/dgtc1012/ECE1160_Final_Project">See Github</a></p>
       </CardContent>
     </Card>
+
+    </FlexWraper>
   </ContentWrapper>
 )
 
