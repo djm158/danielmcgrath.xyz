@@ -27,13 +27,11 @@ const SideBarWrapper = styled.header`
     @media (min-width: 1024px) {
         width: 280px;
     }
-}
 `
 
 const SideNav = styled.nav`
   display: flex;
   justify-content: center;
- }
 `
 
 const LinkList = styled.ul`
