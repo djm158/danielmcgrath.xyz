@@ -4,7 +4,6 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 
-import './index.css'
 import icon from '../images/dan-emoji.png'
 import Logo from '../components/logo'
 

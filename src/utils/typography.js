@@ -37,6 +37,7 @@ lincolnTheme.googleFonts = [
     },
 ]
 lincolnTheme.headerFontFamily = ['Inconsolata', 'monospace'];
+// lincolnTheme.bodyFontFamily = ['Open Sans', 'sans-serif' ]
 lincolnTheme.baseFontSize = '20px';
 const typography = new Typography(lincolnTheme)
 
