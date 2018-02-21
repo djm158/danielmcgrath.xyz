@@ -18,7 +18,7 @@ Some of my goals for this site were:
 
 ### Getting started
 
-The first step I would recommend anyone looking to building their own site is to **buy a domain first.** Putting a little money down on something with your name on it will motivate you to finish your project. I've wasted too much time gooogle searching "programming project ideas" that could've been spent **building**. You can read all the programming books you want but until you get your hands dirty with the tech you probably haven't learned anything. Go somewhere like [namecheap.com](www.namecheap.com) (note: not affiliated, but they provided a great service and got me up and running in no time), search for your name or something creative and pick up one of the cheaper ones. 
+The first step I would recommend anyone looking to building their own site is to **buy a domain first.** Putting a little money down on something with your name on it will motivate you to finish your project. I've wasted too much time gooogle searching "programming project ideas" that could've been spent **building**. You can read all the programming books you want but until you get your hands dirty with the tech you probably haven't learned anything. Go somewhere like [namecheap](https://www.namecheap.com/) (note: not affiliated, but they provided a great service and got me up and running in no time), search for your name or something creative and pick up one of the cheaper ones. 
 
 ### Choose your stack wisely
 

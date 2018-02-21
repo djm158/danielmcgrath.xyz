@@ -11,7 +11,7 @@ According to [Paul Graham](http://paulgraham.com/startupideas.html) the first th
 
 > Why do so many founders build things no one wants? Because they begin by trying to think of startup ideas. That m.o. is doubly dangerous: it doesn't merely yield few good ideas; it yields bad ideas that sound plausible enough to fool you into working on them.
 
-I've spent hours trying to come up with side projects to program and show off on a portfolio, as well as open ended design projects for school. These include a [command line interface](https://github.com/djm158/pitt-cli) for printing files via command line at Pitt, [a gesture controlled quadcopter](https://github.com/djm158/ECE1160_Final_Project), and a [cycling power meter](https://github.com/amh227/PedalPower/tree/master/Senior%20design/PedalPower). None of these came from Google searches for "app ideas" or "project ideas." More often than not, I asked myself the question:
+I've spent hours trying to come up with side projects to program and show off on a portfolio, as well as open ended design projects for school. These include a [command line interface](https://github.com/djm158/pitt-cli) for printing files via command line at Pitt, [a gesture controlled quadcopter](https://github.com/djm158/ECE1160_Final_Project), and a [cycling power meter](https://github.com/djm158/PedalPower). None of these came from Google searches for "app ideas" or "project ideas." More often than not, I asked myself the question:
 
 > What do you spend most of your time doing?
 
