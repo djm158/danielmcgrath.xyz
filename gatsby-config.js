@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Daniel McGrath | Portfolio`,
+    siteUrl: `https://danielmcgrath.xyz`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -19,5 +20,8 @@ module.exports = {
         path: `${__dirname}/src/`
       },
     },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+    }
   ],
 }
