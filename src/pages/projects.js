@@ -15,6 +15,11 @@ const Card = styled.div`
   text-align: center;
   margin: 20px;
   width: 200px;
+  transition: box-shadow .3s;
+
+  &:hover {
+    box-shadow: 0 0 10px rgba(33,33,33,.6); 
+  }
 `
 
 const CardImg = styled.div`
