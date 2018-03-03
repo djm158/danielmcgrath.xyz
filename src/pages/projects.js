@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import styled from 'styled-components'
 import emoji from '../images/dan-emoji.png'
 import drone from '../images/drone.png'
+import crank from '../images/crank.png'
 import ContentWrapper from '../layouts/contentwrapper'
 
 const Card = styled.div`
@@ -49,21 +50,30 @@ const FlexWraper = styled.div`
 const ProjectsPage = () => (
   <ContentWrapper>
     <FlexWraper>
-    <Card>
-      <CardImg src={emoji}></CardImg>
-      <CardContent>
-        <span>danielmcgrath.xyz</span>
-        <p><a href="https://github.com/djm158/danielmcgrath.xyz">This website!</a></p>
-      </CardContent>
-    </Card>
 
-    <Card>
-      <CardImg src={drone}></CardImg>
-      <CardContent>
-        <span>gesture controlled quadcopter</span>
-        <p><a href="https://github.com/dgtc1012/ECE1160_Final_Project">See Github</a></p>
-      </CardContent>
-    </Card>
+      <Card>
+        <CardImg src={emoji}></CardImg>
+        <CardContent>
+          <span>danielmcgrath.xyz</span>
+          <p><a href="https://github.com/djm158/danielmcgrath.xyz">This website!</a></p>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardImg src={drone}></CardImg>
+        <CardContent>
+          <span>gesture controlled quadcopter</span>
+          <p><a href="https://github.com/dgtc1012/ECE1160_Final_Project">Fly like Iron Man</a></p>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardImg src={crank}></CardImg>
+        <CardContent>
+          <span>Pedal Power</span>
+          <p><a href="https://github.com/djm158/PedalPower_Embedded">DIY Power Meter</a></p>
+        </CardContent>
+      </Card>
 
     </FlexWraper>
   </ContentWrapper>
