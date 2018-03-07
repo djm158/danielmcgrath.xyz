@@ -140,6 +140,82 @@ If we navigate to our bot's twitter page (mine is https://twitter.com/helpwanted
 
 ![](helloworldtweet.PNG)
 
-Now we're talking. Next we'll get up and running with Github's API and starte **saving the world** (the open source world, that is).
+Now we're talking. Next we'll get up and running with Github's API and start **saving the world** (the open source world, that is).
 
 ### Tweet some issues 
+
+Octokit makes it trivial to use [Github's search API](https://developer.github.com/v3/search/). Since this is going to be a pretty simple bot, we're just going to have it do a search for open issues with the tag "help wanted" every 10 minutes. Let's make a function to do a search.
+
+Add the following code to `app.js`
+
+```js
+// declare this at the top of your app.js
+const query = "label:\"help wanted\"+state:open"
+
+function getNewIssue() {
+  octokit.search.issues({
+    q: query,
+    sort: "created"
+  }).then(result => {
+    const item = result.data.items[0];
+    console.log(item)
+  })
+}
+
+// replace postTweet() with getNewIssue()
+getNewIssue()
+```
+
+We're using [javascript promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) with octokit to hit Github's search API. Octokit's `search.issues` function takes an object with several option parameters ([see documentation](https://octokit.github.io/rest.js/)) but we're only using `q` and `sort`. `q` specifies the **query string** appended to the **REST** endpoint that octokit hits. In our case we're telling it we want labels "help wanted" and in the state "open". We sort by "created" so that the first result in our search is the newest. 
+
+In the `.then` statement, we use [arrow function syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) to return the result. `result` is a `json` response object with a field `data` that contains a list of issues in an array called `items`. We're simply grabbing the first item in the array and printing it out. Give it a try with `npm start`!
+
+### Putting it all together
+
+We're almost there! All we have to do is make our `postTweet` function accept some data from `getNewIssue` and we'll be tweeting away. Let's make it accept an argument `data` and call it from `getNewIssue`. While we're at it, we'll set our bot to tweet on a timed interval of ten minutes.
+
+Modify your `app.js` to look like this:
+
+```js
+const twit = require('twit');
+const octokit = require('@octokit/rest')();
+
+require('dotenv').config()
+
+const config = {
+  consumer_key: process.env.CONSUMER_KEY,
+  consumer_secret: process.env.CONSUMER_SECRET,
+  access_token: process.env.ACCESS_TOKEN,
+  access_token_secret: process.env.ACCESS_TOKEN_SECRET
+}
+
+const Twitter = new twit(config);
+const query = "label:\"help wanted\"+state:open"
+// 1000ms/1s * 60s/1 minute * 10 minutes
+const repeatTime = 1000 * 60 * 10
+
+function getNewIssue() {
+  octokit.search.issues({
+    q: query,
+    sort: "created"
+  }).then(result => {
+    const item = result.data.items[0];
+    postTweet(item.title + " " + item.html_url)
+  })
+}
+
+function postTweet(data) {
+  Twitter.post('statuses/update', {
+    status: data
+  }, function (err, data, response) {
+    console.log(data)
+  })
+}
+
+setInterval(getNewIssue, repeatTime)
+```
+
+Now we're passing the `title` and `html_url` of the Github issue to `postTweet` and then sitting it as our status! Try it with `npm start`. You'll have to wait ten minutes to see a tweet, so you can set the interval to be shorter and then stop the process by pressing `ctrl+c`.
+
+### Deploy to Heroku
+
