@@ -115,8 +115,10 @@ Let's create a function that will post a tweet to our account (don't worry, we c
 Add the following function to `app.js`:
 
 ```js
-function postTweet() {
-  Twitter.post('statuses/update', { status: "Hello, world!" }, function(err, data, response) {
+function postTweet(data) {
+  Twitter.post('statuses/update', {
+    status: data
+  }, function (err, data, response) {
     console.log(data)
   })
 }
@@ -134,4 +136,10 @@ On the command line, run the following:
 $ npm start
 ```
 
+If we navigate to our bot's twitter page (mine is https://twitter.com/helpwantedbot) we'll see our bot's first tweet!
 
+![](helloworldtweet.PNG)
+
+Now we're talking. Next we'll get up and running with Github's API and starte **saving the world** (the open source world, that is).
+
+### Tweet some issues 
