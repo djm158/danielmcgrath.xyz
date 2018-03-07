@@ -11,6 +11,8 @@
     "gatsby-plugin-sitemap": "^1.2.13",
     "gatsby-plugin-styled-components": "^2.0.5",
     "gatsby-plugin-typography": "^1.7.13",
+    "gatsby-remark-images": "^1.5.56",
+    "gatsby-remark-prismjs": "^1.2.17",
     "gatsby-source-filesystem": "^1.5.18",
     "gatsby-transformer-remark": "^1.7.31",
     "react-helmet": "^5.2.0",

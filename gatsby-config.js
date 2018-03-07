@@ -12,7 +12,23 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
-    `gatsby-transformer-remark`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            }
+          },
+          {
+            resolve: `gatsby-remark-prismjs`
+          }
+        ]
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
