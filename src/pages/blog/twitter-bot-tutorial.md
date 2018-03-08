@@ -249,7 +249,7 @@ Before we can get our bot running on heroku, we'll need to add our Twitter crede
 
 with the correct `VALUE` matching your `.env` file. Heroku will load these variables in the environment for us, therefore there is no need to load them via `dotenv`. We can add another config variable to heroku, called `NODE_ENV` that will tell our app whether it is in a testing/development/production environment. Add the following:
 
-![node env](nodeEnv.png)
+![node env](nodeEnv.PNG)
 
 We will then wrap our `require('dotenv').config()` statement in an if statement to see if we are in production or not. This should look like:
 
