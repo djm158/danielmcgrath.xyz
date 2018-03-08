@@ -219,3 +219,80 @@ Now we're passing the `title` and `html_url` of the Github issue to `postTweet` 
 
 ### Deploy to Heroku
 
+Heroku is the perfect host for our Node.js bot. Not only is it easy to configure, it's _free_. They have a great [getting started](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction) tutorial to get you up and running. 
+
+The TL;DR of the tutorial is to create an account if you haven't and install the cli. You'll need to have [git installed] as well. Verify the installation with
+
+```sh
+$ git --version
+```
+
+While we have git ready, let's make our project a git repository that you can push to Github when we're done! Run the following in the top level directory of our project:
+
+```sh
+$ git config --global user.name <your name>
+$ git config --global user.email <youremail@whatever.com>
+$ git init
+$ git add -A
+$ git commit -m "initial commit"
+```
+
+ Then run
+
+```sh
+$ heroku login
+$ heroku create
+```
+Before we can get our bot running on heroku, we'll need to add our Twitter credentials to heroku. Navigate to your apps dashboard -> settings -> reveal config vars. Your keys should look something like 
+
+![heroku config vars](herokuconfigvars.PNG)
+
+with the correct `VALUE` matching your `.env` file. Heroku will load these variables in the environment for us, therefore there is no need to load them via `dotenv`. We can add another config variable to heroku, called `NODE_ENV` that will tell our app whether it is in a testing/development/production environment. Add the following:
+
+![node env](nodeEnv.png)
+
+We will then wrap our `require('dotenv').config()` statement in an if statement to see if we are in production or not. This should look like:
+
+```js
+if(process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
+```
+
+Now we will be able to load our `.env` in local development, but Heroku will safely ignore it when `NODE_ENV` is set to `production`. Commit this change with 
+
+```sh
+$ git add -A && git commit -m "add production environment check"
+```
+
+We're finally ready to launch or app. Run the following commands to push our app to Heroku:
+
+```sh
+$ git push heroku master
+$ heroku ps:scale worker=1
+```
+
+This last line tells heroku what kind of app we are running. It should now tweet a new issue every 10 minutes! **Note:** this will fail if the top issue in the search hasn't changed over the last ten minutes, so in a later iteration we might want to check to see if we've already tweeted something (perhaps by storing our tweets in a database).
+
+We can configure how are app runs more explicitly in a `Procfile`.
+
+```sh
+$ touch Procfile
+```
+
+Add the following to it:
+
+```
+worker: node app.js
+```
+
+Then:
+
+```sh
+$ git add Procfile && git commit -m "add Procfile"
+$ git push heroku master
+```
+
+And we're all set! I hope you've found this tutorial useful. Be on the lookout for more tasty web dev tutorials soon. 
+
+Thanks!
