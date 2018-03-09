@@ -3,7 +3,6 @@ import Link from 'gatsby-link'
 import styled from 'styled-components'
 
 import ContentWrapper from '../layouts/contentwrapper'
-require("prismjs/themes/prism-twilight.css");
 
 const IndexPage = () => (
     <ContentWrapper>

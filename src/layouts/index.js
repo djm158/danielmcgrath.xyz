@@ -12,6 +12,7 @@ import SideBar from './sidebar'
 import Menu from '../components/menu'
 import favicon from '../images/favicon.ico'
 
+require("prismjs/themes/prism-twilight.css");
 
 const PageWrapper = styled.div`
     display: flex;
@@ -46,7 +47,6 @@ const MainContent = styled.main`
   @media (min-width: 768px) {
     display: flex;
     height: 100vh;
-    overflow-y: auto;
   }
   > div {
     width: 100%;
