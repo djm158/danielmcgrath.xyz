@@ -2,6 +2,7 @@ import React from "react";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
 import styled from 'styled-components'
+import { navigateTo } from 'gatsby-link'
 
 const Input = styled.input`
   width: 400px;
@@ -40,7 +41,7 @@ export default class Contact extends React.Component {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...this.state })
     })
-      .then(() => alert("Success!"))
+      .then(() => navigateTo('/thanks'))
       .catch(error => alert(error));
 
     e.preventDefault();
