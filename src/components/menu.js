@@ -116,6 +116,7 @@ class Menu extends React.Component {
                 <li><SideLink onClick={this.handleClick} to="/projects">Projects</SideLink></li>
                 <li><SideLink onClick={this.handleClick} to="/blog/">Blog</SideLink></li>
                 <li><SideLink onClick={this.handleClick} to="/about">About</SideLink></li>
+                <li><SideLink onClick={this.handleClick} to="/contact">Contact</SideLink></li>
               </LinkList>
             </SideNav>
           </Overlay>
