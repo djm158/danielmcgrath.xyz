@@ -76,6 +76,7 @@ const SideBar = () => (
          <li><SideLink to="/projects">Projects</SideLink></li>
          <li><SideLink to="/blog/">Blog</SideLink></li>
          <li><SideLink to="/about">About</SideLink></li>
+         <li><SideLink to="/contact">Contact</SideLink></li>
       </LinkList>
     </SideNav>
   </SideBarWrapper>
