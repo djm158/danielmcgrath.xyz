@@ -4,6 +4,10 @@ import Helmet from "react-helmet";
 import styled from 'styled-components'
 import { navigateTo } from 'gatsby-link'
 
+const SubmitButton = styled.button`
+  cursor: pointer;
+`
+
 const Input = styled.input`
   width: 400px;
   @media(max-width: 480px) {
@@ -83,7 +87,7 @@ export default class Contact extends React.Component {
             </label>
           </p>
           <p>
-            <button type="submit">Send</button>
+            <SubmitButton type="submit">Send</SubmitButton>
           </p>
         </form>
       </div>
