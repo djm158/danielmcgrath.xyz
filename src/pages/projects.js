@@ -12,6 +12,7 @@ const Card = styled.div`
   height: 320px;
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
   float: left;
   text-align: center;
   margin: 20px;
