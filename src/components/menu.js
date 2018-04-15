@@ -104,8 +104,8 @@ class Menu extends React.Component {
 
         <StyledWrapper>
           <Header>
-            <div><a onClick={this.handleClick}>Menu</a></div>
-            <div><Logo /></div>
+            <a onClick={this.handleClick}>Menu</a>
+            <Logo />
             <div>&nbsp; &nbsp; &nbsp; &nbsp;</div>
 
           </Header>
