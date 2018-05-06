@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import icon from '../images/dan-emoji.png'
 import styled from 'styled-components'
 import Logo from '../components/logo'
+import resume from '../files/danmcgrathresume.pdf'
 
 const SideBarWrapper = styled.header`
     display: flex;
@@ -66,6 +67,34 @@ const SideLink = styled(Link)`
   }
 `
 
+const SideAnchor = styled.a`
+  line-height: 2rem;
+  text-decoration: none;
+  position: relative;
+  color: #000;
+  font-size: 24px;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    visibility: hidden;
+    transform: scaleX(0);
+    -webkit-transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+  }
+
+  &:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+  }
+`
+
 const SideBar = () => (
 
   <SideBarWrapper>
@@ -77,6 +106,7 @@ const SideBar = () => (
          <li><SideLink to="/blog/">Blog</SideLink></li>
          <li><SideLink to="/about">About</SideLink></li>
          <li><SideLink to="/contact">Contact</SideLink></li>
+         <li><SideAnchor href={resume}>Resume</SideAnchor></li>
       </LinkList>
     </SideNav>
   </SideBarWrapper>
