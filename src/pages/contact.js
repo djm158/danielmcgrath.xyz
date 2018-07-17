@@ -13,6 +13,14 @@ const Input = styled.input`
   @media(max-width: 480px) {
     width: 100%;
   }
+
+  &:focus:required:invalid {
+    background-color: pink;
+  }
+
+  &:focus:required:valid {
+    color: green;
+  }
 `
 const TextArea = styled.textarea`
   width: 400px;
@@ -32,11 +40,39 @@ function encode(data) {
 export default class Contact extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      name: '',
+      email: '',
+      message: '',
+      emailValid: false,
+      nameValid: false,
+      messageValid: false,
+      focused: false
+    };
   }
 
   handleChange = (e) => {
-    this.setState({[e.target.name]: e.target.value});
+    const name = e.target.name;
+    const value = e.target.value;
+    this.setState({[name]: value}, () => { this.validateField(name, value)});
+  }
+
+  validateField(name, value) {
+    let nameValid = this.state.nameValid;
+    let emailValid = this.state.emailValid;
+    let messageValid = this.state.messageValid;
+    switch(name) {
+      case 'name':
+        nameValid = value.length > 0;
+      case 'email':
+        emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+        break;
+      case 'message':
+        messageValid = value.length > 0;
+        break;
+      default:
+        break;
+    }
   }
 
   handleSubmit = e => {
@@ -71,19 +107,19 @@ export default class Contact extends React.Component {
           <p>
             <label>
               Your name:<br />
-            <Input type="text" name="name" onChange={this.handleChange} />
+            <Input type="text" name="name" onChange={this.handleChange} required/>
             </label>
           </p>
           <p>
             <label>
               Your email:<br />
-              <Input type="email" name="email" onChange={this.handleChange} />
+              <Input type="email" name="email" onChange={this.handleChange} required/>
             </label>
           </p>
           <p>
             <label>
               Message:<br />
-              <TextArea name="message" onChange={this.handleChange} />
+              <TextArea name="message" onChange={this.handleChange} onFocus={this.setState({focused: true})} required/>
             </label>
           </p>
           <p>
