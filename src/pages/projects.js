@@ -1,10 +1,9 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import styled from 'styled-components'
 import emoji from '../images/dan-emoji.png'
 import drone from '../images/drone.png'
 import crank from '../images/crank.png'
-import ContentWrapper from '../layouts/contentwrapper'
+import robot from '../images/robot.png'
 
 const Card = styled.div`
 /* offset-x | offset-y | blur-radius | spread-radius | color */
@@ -39,19 +38,18 @@ const CardContent = styled.div`
   padding-top: 10px;
 `
 
-const FlexWraper = styled.div`
+const FlexWrapper = styled.div`
   display: flex;
-  flex-flow: row;
-  justify-content: center;
-  align-items: center;
+  flex-flow: row wrap;
   @media (max-width: 567px) {
     flex-flow: column;
+    justify-content: center;
+    align-items: center;
   }
 `
 
 const ProjectsPage = () => (
-  <ContentWrapper>
-    <FlexWraper>
+    <FlexWrapper>
 
       <Card>
         <CardImg src={emoji}></CardImg>
@@ -64,7 +62,7 @@ const ProjectsPage = () => (
       <Card>
         <CardImg src={drone}></CardImg>
         <CardContent>
-          <span>gesture controlled quadcopter</span>
+          <span>Gesture Controlled Quadcopter</span>
           <p><a href="https://github.com/dgtc1012/ECE1160_Final_Project">Fly like Iron Man</a></p>
         </CardContent>
       </Card>
@@ -76,9 +74,16 @@ const ProjectsPage = () => (
           <p><a href="https://github.com/djm158/PedalPower_Embedded">DIY Power Meter</a></p>
         </CardContent>
       </Card>
+      
+      <Card>
+        <CardImg src={robot}></CardImg>
+        <CardContent>
+          <span>Help wanted bot</span>
+          <p><a href="https://github.com/djm158/help-wanted-bot">Find issues that need help!</a></p>
+        </CardContent>
+      </Card>
 
-    </FlexWraper>
-  </ContentWrapper>
+    </FlexWrapper>
 )
 
 export default ProjectsPage
