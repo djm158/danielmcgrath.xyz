@@ -20,7 +20,8 @@ const Card = styled.div`
   padding-top: 10px;
 
   &:hover {
-    box-shadow: 0 0 10px rgba(33,33,33,.6); 
+    box-shadow: 0 0 10px rgba(33,33,33,.6);
+    transform: translateY(-3px);
   }
 `
 
