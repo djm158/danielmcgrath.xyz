@@ -3,8 +3,8 @@ import ContentWrapper from '../layouts/contentwrapper'
 
 const Thanks = () => (
   <ContentWrapper>
-    <h1>Thanks!</h1>
-      <p>We'll be in contact shortly.</p>
+    <h1>Thanks for reaching out!</h1>
+      <p>I'll be in contact shortly. 😊</p>
   </ContentWrapper>
 )
 
