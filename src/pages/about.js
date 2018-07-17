@@ -14,6 +14,11 @@ const IconLink = styled.a`
     fill: #6e2c19;
     cursor: pointer;
   }
+
+  &:focus {
+    outline: none;
+    fill: #6e2c19;
+  }
 `
 
 const AboutPage = () => (
