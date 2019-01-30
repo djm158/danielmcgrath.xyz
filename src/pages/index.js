@@ -9,7 +9,7 @@ const IndexPage = () => (
       <h1>Hello!</h1>
       <p>I'm Dan.</p>
       <p>
-        I'm a full stack developer at <a href="https://www.ceiamerica.com/">CEI</a> based in Philadelphia.
+        I'm a full stack developer at <a href="https://www.vistarmedia.com/">Vistar Media</a> based in Philadelphia.
     </p>
       <p>
         I have a diverse background ranging from embedded systems to front end
