@@ -1,11 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 
 import icon from '../images/dan-emoji.png'
-import Logo from '../components/logo'
 
 import SideBar from './sidebar'
 
@@ -60,8 +58,7 @@ const TemplateWrapper = ({ children }) => (
     <Helmet
       title="Daniel McGrath | Portfolio"
       meta={[
-        { name: 'description', content: 'Personal website for Dan McGrath' },
-        { name: 'keywords', content: 'embedded-systems, web-development' },
+        { name: 'description', content: 'I am a full stack developer specializing in React and Node/Express. Located in Philadelphia.' },
         { property: 'og:title', content: 'Dan McGrath' },
         { favicon: favicon }
       ]}
