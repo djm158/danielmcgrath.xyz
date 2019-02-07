@@ -63,6 +63,11 @@ const TemplateWrapper = ({ children }) => (
               "I am a full stack developer specializing in React and Node/Express. Located in Philadelphia."
           },
           { property: "og:title", content: "Dan McGrath" },
+          {
+            name: "google-site-verification",
+            content: "95KOp3p43ZyY3eebJ9GxPGL_9_Oc-mCN8V12C4U3Vws"
+          },
+
           { favicon: favicon }
         ]}
         link={[{ rel: "shortcut icon", type: "image/x-icon", href: icon }]}

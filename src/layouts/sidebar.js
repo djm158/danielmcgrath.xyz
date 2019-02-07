@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "gatsby-link";
-import icon from "../images/dan-emoji.png";
 import styled from "styled-components";
 import Logo from "../components/logo";
 import resume from "../files/danmcgrathresume.pdf";
