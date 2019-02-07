@@ -1,8 +1,8 @@
-import React from 'react'
-import Link from 'gatsby-link'
-import icon from '../images/dan-emoji.png'
-import styled from 'styled-components'
-import Logo from '../components/logo'
+import React from "react";
+import Link from "gatsby-link";
+import icon from "../images/dan-emoji.png";
+import styled from "styled-components";
+import Logo from "../components/logo";
 
 const Overlay = styled.div`
   position: fixed;
@@ -11,13 +11,13 @@ const Overlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: ${props => props.open ? 1 : 0};
-  visibility: ${props => props.open ? 'visible' : 'hidden'};
-  transition: opacity .35s, visibility .35s, height .35s;
+  opacity: ${props => (props.open ? 1 : 0)};
+  visibility: ${props => (props.open ? "visible" : "hidden")};
+  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
   overflow: hidden;
   padding-top: 60px;
   z-index: 10;
-`
+`;
 
 const Header = styled.header`
   display: flex;
@@ -35,13 +35,13 @@ const Header = styled.header`
   @media (min-width: 768px) {
     display: none;
   }
-`
+`;
 
 const StyledWrapper = styled.div`
   overflow: hidden;
   width: 100%;
   height: 100%;
-`
+`;
 
 const SideNav = styled.nav`
   width: 100%;
@@ -53,13 +53,13 @@ const SideNav = styled.nav`
   align-items: center;
   justify-content: center;
  }
-`
+`;
 
 const LinkList = styled.ul`
   list-style-type: none;
   margin: 0;
-`
-const SideLink = styled(Link) `
+`;
+const SideLink = styled(Link)`
   line-height: 2rem;
   text-decoration: none;
   position: relative;
@@ -85,7 +85,7 @@ const SideLink = styled(Link) `
     transform: scaleX(1);
     -webkit-transform: scaleX(1);
   }
-`
+`;
 
 class Menu extends React.Component {
   constructor(props) {
@@ -100,30 +100,47 @@ class Menu extends React.Component {
   }
 
   render() {
-      return (
-
-        <StyledWrapper>
-          <Header>
-            <a onClick={this.handleClick}>Menu</a>
-            <Logo />
-            <div>&nbsp; &nbsp; &nbsp; &nbsp;</div>
-
-          </Header>
-          <Overlay open={this.state.isToggle}>
-            <SideNav>
-              <LinkList>
-                <li><SideLink onClick={this.handleClick} to="/">Home</SideLink></li>
-                <li><SideLink onClick={this.handleClick} to="/projects">Projects</SideLink></li>
-                <li><SideLink onClick={this.handleClick} to="/blog/">Blog</SideLink></li>
-                <li><SideLink onClick={this.handleClick} to="/about">About</SideLink></li>
-                <li><SideLink onClick={this.handleClick} to="/contact">Contact</SideLink></li>
-              </LinkList>
-            </SideNav>
-          </Overlay>
-        </StyledWrapper>
-      )
-
+    return (
+      <StyledWrapper>
+        <Header>
+          <a onClick={this.handleClick}>Menu</a>
+          <Logo />
+          <div>&nbsp; &nbsp; &nbsp; &nbsp;</div>
+        </Header>
+        <Overlay open={this.state.isToggle}>
+          <SideNav>
+            <LinkList>
+              <li>
+                <SideLink onClick={this.handleClick} to="/">
+                  Home
+                </SideLink>
+              </li>
+              <li>
+                <SideLink onClick={this.handleClick} to="/projects">
+                  Projects
+                </SideLink>
+              </li>
+              <li>
+                <SideLink onClick={this.handleClick} to="/blog/">
+                  Blog
+                </SideLink>
+              </li>
+              <li>
+                <SideLink onClick={this.handleClick} to="/about">
+                  About
+                </SideLink>
+              </li>
+              <li>
+                <SideLink onClick={this.handleClick} to="/contact">
+                  Contact
+                </SideLink>
+              </li>
+            </LinkList>
+          </SideNav>
+        </Overlay>
+      </StyledWrapper>
+    );
   }
 }
 
-export default Menu
+export default Menu;

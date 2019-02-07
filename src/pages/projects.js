@@ -1,12 +1,12 @@
-import React from 'react'
-import styled from 'styled-components'
-import emoji from '../images/dan-emoji.png'
-import drone from '../images/drone.png'
-import crank from '../images/crank.png'
-import robot from '../images/robot.png'
+import React from "react";
+import styled from "styled-components";
+import emoji from "../images/dan-emoji.png";
+import drone from "../images/drone.png";
+import crank from "../images/crank.png";
+import robot from "../images/robot.png";
 
 const Card = styled.div`
-/* offset-x | offset-y | blur-radius | spread-radius | color */
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
   box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 5px 0px; /*, rgba(0, 0, 0, 0.12) 0px 2px 10px 0px*/
   height: 320px;
   display: flex;
@@ -16,28 +16,28 @@ const Card = styled.div`
   text-align: center;
   margin: 20px;
   width: 200px;
-  transition: box-shadow .3s;
+  transition: box-shadow 0.3s;
   padding-top: 10px;
 
   &:hover {
-    box-shadow: 0 0 10px rgba(33,33,33,.6);
+    box-shadow: 0 0 10px rgba(33, 33, 33, 0.6);
     transform: translateY(-3px);
   }
-`
+`;
 
 const CardImg = styled.div`
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
-  width:  200px;
+  width: 200px;
   height: 200px;
   background-image: url(${props => props.src});
-`
+`;
 
 const CardContent = styled.div`
   width: 200px;
   padding-top: 10px;
-`
+`;
 
 const FlexWrapper = styled.div`
   display: flex;
@@ -47,44 +47,58 @@ const FlexWrapper = styled.div`
     justify-content: center;
     align-items: center;
   }
-`
+`;
 
 const ProjectsPage = () => (
-    <FlexWrapper>
+  <FlexWrapper>
+    <Card>
+      <CardImg src={emoji} />
+      <CardContent>
+        <span>danielmcgrath.xyz</span>
+        <p>
+          <a href="https://github.com/djm158/danielmcgrath.xyz">
+            This website!
+          </a>
+        </p>
+      </CardContent>
+    </Card>
 
-      <Card>
-        <CardImg src={emoji}></CardImg>
-        <CardContent>
-          <span>danielmcgrath.xyz</span>
-          <p><a href="https://github.com/djm158/danielmcgrath.xyz">This website!</a></p>
-        </CardContent>
-      </Card>
+    <Card>
+      <CardImg src={drone} />
+      <CardContent>
+        <span>Gesture Controlled Quadcopter</span>
+        <p>
+          <a href="https://github.com/dgtc1012/ECE1160_Final_Project">
+            Fly like Iron Man
+          </a>
+        </p>
+      </CardContent>
+    </Card>
 
-      <Card>
-        <CardImg src={drone}></CardImg>
-        <CardContent>
-          <span>Gesture Controlled Quadcopter</span>
-          <p><a href="https://github.com/dgtc1012/ECE1160_Final_Project">Fly like Iron Man</a></p>
-        </CardContent>
-      </Card>
+    <Card>
+      <CardImg src={crank} />
+      <CardContent>
+        <span>Pedal Power</span>
+        <p>
+          <a href="https://github.com/djm158/PedalPower_Embedded">
+            DIY Power Meter
+          </a>
+        </p>
+      </CardContent>
+    </Card>
 
-      <Card>
-        <CardImg src={crank}></CardImg>
-        <CardContent>
-          <span>Pedal Power</span>
-          <p><a href="https://github.com/djm158/PedalPower_Embedded">DIY Power Meter</a></p>
-        </CardContent>
-      </Card>
-      
-      <Card>
-        <CardImg src={robot}></CardImg>
-        <CardContent>
-          <span>Help wanted bot</span>
-          <p><a href="https://github.com/djm158/help-wanted-bot">Find issues that need help!</a></p>
-        </CardContent>
-      </Card>
+    <Card>
+      <CardImg src={robot} />
+      <CardContent>
+        <span>Help wanted bot</span>
+        <p>
+          <a href="https://github.com/djm158/help-wanted-bot">
+            Find issues that need help!
+          </a>
+        </p>
+      </CardContent>
+    </Card>
+  </FlexWrapper>
+);
 
-    </FlexWrapper>
-)
-
-export default ProjectsPage
+export default ProjectsPage;

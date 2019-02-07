@@ -15,9 +15,7 @@ const IndexPage = () => (
       I have a diverse background ranging from embedded systems to front end
       development.
     </p>
-    <p>
-      I enjoy working with React, Typescript, and NodeJS.
-    </p>
+    <p>I enjoy working with React, Typescript, and NodeJS.</p>
     <p>
       Checkout my{" "}
       <a target="_blank" href="https://github.com/djm158">

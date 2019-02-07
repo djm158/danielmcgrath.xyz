@@ -1,32 +1,32 @@
 import React from "react";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
-import styled from 'styled-components'
-import { navigateTo } from 'gatsby-link'
+import styled from "styled-components";
+import { navigateTo } from "gatsby-link";
 
 const SubmitButton = styled.button`
   cursor: pointer;
-`
+`;
 
 const Input = styled.input`
   width: 400px;
-  @media(max-width: 480px) {
+  @media (max-width: 480px) {
     width: 100%;
   }
-`
+`;
 const TextArea = styled.textarea`
   width: 400px;
   height: 280px;
-  @media(max-width: 480px) {
+  @media (max-width: 480px) {
     width: 100%;
     height: 80px;
   }
-`
+`;
 
 function encode(data) {
   return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
 }
 
 export default class Contact extends React.Component {
@@ -35,9 +35,9 @@ export default class Contact extends React.Component {
     this.state = {};
   }
 
-  handleChange = (e) => {
-    this.setState({[e.target.name]: e.target.value});
-  }
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
   handleSubmit = e => {
     fetch("/", {
@@ -45,7 +45,7 @@ export default class Contact extends React.Component {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...this.state })
     })
-      .then(() => navigateTo('/thanks'))
+      .then(() => navigateTo("/thanks"))
       .catch(error => alert(error));
 
     e.preventDefault();
@@ -70,19 +70,22 @@ export default class Contact extends React.Component {
           </p>
           <p>
             <label>
-              Your name:<br />
-            <Input type="text" name="name" onChange={this.handleChange} />
+              Your name:
+              <br />
+              <Input type="text" name="name" onChange={this.handleChange} />
             </label>
           </p>
           <p>
             <label>
-              Your email:<br />
+              Your email:
+              <br />
               <Input type="email" name="email" onChange={this.handleChange} />
             </label>
           </p>
           <p>
             <label>
-              Message:<br />
+              Message:
+              <br />
               <TextArea name="message" onChange={this.handleChange} />
             </label>
           </p>
