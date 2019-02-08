@@ -50,6 +50,7 @@ const MainContent = styled.main`
   }
 }
 `;
+
 const TemplateWrapper = ({ children }) => (
   <div>
     <Menu />
@@ -71,7 +72,9 @@ const TemplateWrapper = ({ children }) => (
           { favicon: favicon }
         ]}
         link={[{ rel: "shortcut icon", type: "image/x-icon", href: icon }]}
-      />
+      >
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <SideBar />
       <MainWrapper>
         <Main>
