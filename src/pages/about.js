@@ -24,7 +24,7 @@ const IconLink = styled.a`
 
 const AboutPage = () => (
   <ContentWrapper>
-    <Fade left>
+    <Fade>
       <h1>About me</h1>
     </Fade>
 
@@ -61,7 +61,7 @@ const AboutPage = () => (
             </svg>
           </IconLink>
         </Fade>
-        <Fade right delay={200}>
+        <Fade right delay={100}>
           <IconLink href="https://github.com/djm158/">
             <svg
               aria-labelledby="simpleicons-github-icon"
@@ -75,7 +75,7 @@ const AboutPage = () => (
           </IconLink>
         </Fade>
 
-      <Fade right delay={400}>
+      <Fade right delay={200}>
         <IconLink href="https://twitter.com/runDMCgrath">
           <svg
             aria-labelledby="simpleicons-twitter-icon"
@@ -89,7 +89,7 @@ const AboutPage = () => (
         </IconLink>
       </Fade>
 
-      <Fade right delay={600}>
+      <Fade right delay={300}>
         <IconLink href="https://open.spotify.com/user/1259387739?si=LxH6YjfNTfmcrSNxOHph1Q">
           <svg
             aria-labelledby="simpleicons-spotify-icon"
@@ -103,7 +103,7 @@ const AboutPage = () => (
         </IconLink>
       </Fade>
 
-      <Fade right delay={800}>
+      <Fade right delay={400}>
         <IconLink href="https://www.strava.com/athletes/22349041">
           <svg
             aria-labelledby="simpleicons-strava-icon"

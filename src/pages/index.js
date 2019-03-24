@@ -4,7 +4,7 @@ import React from "react";
 
 const IndexPage = () => (
   <ContentWrapper>
-    <Fade>
+    <Fade delay={100}>
       <h1>Hello!</h1>
       <p>I'm Dan.</p>
       <p>

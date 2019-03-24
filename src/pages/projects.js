@@ -66,7 +66,7 @@ const ProjectsPage = () => (
       </Card>
     </Fade>
 
-    <Fade right delay={200}>
+    <Fade right delay={100}>
       <Card>
         <CardImg src={drone} />
         <CardContent>
@@ -80,7 +80,7 @@ const ProjectsPage = () => (
       </Card>
     </Fade>
 
-    <Fade right delay={400}>
+    <Fade right delay={200}>
       <Card>
         <CardImg src={crank} />
         <CardContent>
@@ -93,7 +93,7 @@ const ProjectsPage = () => (
         </CardContent>
       </Card>
     </Fade>
-    <Fade right delay={600}>
+    <Fade right delay={300}>
       <Card>
         <CardImg src={robot} />
         <CardContent>

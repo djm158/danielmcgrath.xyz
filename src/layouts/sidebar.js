@@ -1,8 +1,9 @@
-import React from "react";
+import Fade from "react-reveal/Fade";
 import Link from "gatsby-link";
-import styled from "styled-components";
 import Logo from "../components/logo";
+import React from "react";
 import resume from "../files/danmcgrathresume.pdf";
+import styled from "styled-components";
 
 const SideBarWrapper = styled.header`
   display: flex;
@@ -96,27 +97,41 @@ const SideAnchor = styled.a`
 
 const SideBar = () => (
   <SideBarWrapper>
-    <Logo />
+    <Fade delay={100}>
+      <Logo />
+    </Fade>
     <SideNav>
       <LinkList>
-        <li>
-          <SideLink to="/">Home</SideLink>
-        </li>
-        <li>
-          <SideLink to="/projects">Projects</SideLink>
-        </li>
-        <li>
-          <SideLink to="/blog/">Blog</SideLink>
-        </li>
-        <li>
-          <SideLink to="/about">About</SideLink>
-        </li>
-        <li>
-          <SideLink to="/contact">Contact</SideLink>
-        </li>
-        <li>
-          <SideAnchor href={resume}>Resume</SideAnchor>
-        </li>
+        <Fade left>
+          <li>
+            <SideLink to="/">Home</SideLink>
+          </li>
+        </Fade>
+        <Fade left>
+          <li>
+            <SideLink to="/projects">Projects</SideLink>
+          </li>
+        </Fade>
+        <Fade left delay={100}>
+          <li>
+            <SideLink to="/blog/">Blog</SideLink>
+          </li>
+        </Fade>
+        <Fade left delay={200}>
+          <li>
+            <SideLink to="/about">About</SideLink>
+          </li>
+        </Fade>
+        <Fade left delay={300}>
+          <li>
+            <SideLink to="/contact">Contact</SideLink>
+          </li>
+        </Fade>
+        <Fade left delay={400}>
+          <li>
+            <SideAnchor href={resume}>Resume</SideAnchor>
+          </li>
+        </Fade>
       </LinkList>
     </SideNav>
   </SideBarWrapper>
