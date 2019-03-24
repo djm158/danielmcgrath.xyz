@@ -24,8 +24,8 @@ const Blog = ({ data }) => (
   <ContentWrapper>
     <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
     {data.allMarkdownRemark.edges.map(({ node }, i) => (
-      <Fade bottom delay={i*100}>
-        <SlugWrapper key={node.id}>
+      <Fade bottom delay={i * 100} key={node.id}>
+        <SlugWrapper>
           <StyledLink to={node.fields.slug}>
             <h3>
               {node.frontmatter.title}{" "}
@@ -47,6 +47,7 @@ export const query = graphql`
       totalCount
       edges {
         node {
+          id
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
