@@ -1,9 +1,10 @@
+import Fade from "react-reveal/Fade";
 import React from "react";
-import styled from "styled-components";
-import emoji from "../images/dan-emoji.png";
-import drone from "../images/drone.png";
 import crank from "../images/crank.png";
+import drone from "../images/drone.png";
+import emoji from "../images/dan-emoji.png";
 import robot from "../images/robot.png";
+import styled from "styled-components";
 
 const Card = styled.div`
   /* offset-x | offset-y | blur-radius | spread-radius | color */
@@ -51,53 +52,60 @@ const FlexWrapper = styled.div`
 
 const ProjectsPage = () => (
   <FlexWrapper>
-    <Card>
-      <CardImg src={emoji} />
-      <CardContent>
-        <span>danielmcgrath.xyz</span>
-        <p>
-          <a href="https://github.com/djm158/danielmcgrath.xyz">
-            This website!
-          </a>
-        </p>
-      </CardContent>
-    </Card>
+    <Fade right>
+      <Card>
+        <CardImg src={emoji} />
+        <CardContent>
+          <span>danielmcgrath.xyz</span>
+          <p>
+            <a href="https://github.com/djm158/danielmcgrath.xyz">
+              This website!
+            </a>
+          </p>
+        </CardContent>
+      </Card>
+    </Fade>
 
-    <Card>
-      <CardImg src={drone} />
-      <CardContent>
-        <span>Gesture Controlled Quadcopter</span>
-        <p>
-          <a href="https://github.com/dgtc1012/ECE1160_Final_Project">
-            Fly like Iron Man
-          </a>
-        </p>
-      </CardContent>
-    </Card>
+    <Fade right delay={200}>
+      <Card>
+        <CardImg src={drone} />
+        <CardContent>
+          <span>Gesture Controlled Quadcopter</span>
+          <p>
+            <a href="https://github.com/dgtc1012/ECE1160_Final_Project">
+              Fly like Iron Man
+            </a>
+          </p>
+        </CardContent>
+      </Card>
+    </Fade>
 
-    <Card>
-      <CardImg src={crank} />
-      <CardContent>
-        <span>Pedal Power</span>
-        <p>
-          <a href="https://github.com/djm158/PedalPower_Embedded">
-            DIY Power Meter
-          </a>
-        </p>
-      </CardContent>
-    </Card>
-
-    <Card>
-      <CardImg src={robot} />
-      <CardContent>
-        <span>Help wanted bot</span>
-        <p>
-          <a href="https://github.com/djm158/help-wanted-bot">
-            Find issues that need help!
-          </a>
-        </p>
-      </CardContent>
-    </Card>
+    <Fade right delay={400}>
+      <Card>
+        <CardImg src={crank} />
+        <CardContent>
+          <span>Pedal Power</span>
+          <p>
+            <a href="https://github.com/djm158/PedalPower_Embedded">
+              DIY Power Meter
+            </a>
+          </p>
+        </CardContent>
+      </Card>
+    </Fade>
+    <Fade right delay={600}>
+      <Card>
+        <CardImg src={robot} />
+        <CardContent>
+          <span>Help wanted bot</span>
+          <p>
+            <a href="https://github.com/djm158/help-wanted-bot">
+              Find issues that need help!
+            </a>
+          </p>
+        </CardContent>
+      </Card>
+    </Fade>
   </FlexWrapper>
 );
 
