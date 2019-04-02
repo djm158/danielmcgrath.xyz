@@ -1,6 +1,7 @@
 import Fade from "react-reveal/Fade";
 import React from "react";
 import SEO from "../components/seo";
+import { withTheme } from "styled-components";
 
 const IndexPage = props => {
   console.log('in index')
@@ -33,4 +34,4 @@ const IndexPage = props => {
   );
 };
 
-export default IndexPage;
+export default withTheme(IndexPage);
