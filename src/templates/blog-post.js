@@ -1,15 +1,17 @@
+import { Box } from "rebass";
 import React from "react";
-import ContentWrapper from "../layouts/contentwrapper";
+import { graphql } from "gatsby";
+import { withTheme } from "styled-components";
 
-export default ({ data }) => {
+export default withTheme(({ data, theme }) => {
   const post = data.markdownRemark;
   return (
-    <ContentWrapper>
+    <Box width={theme.defaultWidths}>
       <h1>{post.frontmatter.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
-    </ContentWrapper>
+    </Box>
   );
-};
+});
 
 export const query = graphql`
   query BlogPostQuery($slug: String!) {

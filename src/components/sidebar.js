@@ -1,6 +1,6 @@
 import Fade from "react-reveal/Fade";
-import Link from "gatsby-link";
-import Logo from "../components/logo";
+import { Link } from "gatsby";
+import Logo from "./logo";
 import React from "react";
 import resume from "../files/danmcgrathresume.pdf";
 import styled from "styled-components";
@@ -39,6 +39,7 @@ const LinkList = styled.ul`
   list-style-type: none;
   margin: 0;
 `;
+
 const SideLink = styled(Link)`
   line-height: 2rem;
   text-decoration: none;
@@ -67,6 +68,7 @@ const SideLink = styled(Link)`
   }
 `;
 
+// TODO: this should resuse SideLink styles somehow
 const SideAnchor = styled.a`
   line-height: 2rem;
   text-decoration: none;

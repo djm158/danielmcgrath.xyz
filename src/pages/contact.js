@@ -1,19 +1,21 @@
 import React from "react";
-import Link from "gatsby-link";
-import Helmet from "react-helmet";
-import styled from "styled-components";
 import { navigateTo } from "gatsby-link";
+import styled from "styled-components";
 
+// TODO: component
 const SubmitButton = styled.button`
   cursor: pointer;
 `;
 
+// TODO: component
 const Input = styled.input`
   width: 400px;
   @media (max-width: 480px) {
     width: 100%;
   }
 `;
+
+// TODO: component
 const TextArea = styled.textarea`
   width: 400px;
   height: 280px;
@@ -43,7 +45,7 @@ export default class Contact extends React.Component {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...this.state })
+      body: encode({ "form-name": "contact", ...this.state }),
     })
       .then(() => navigateTo("/thanks"))
       .catch(error => alert(error));

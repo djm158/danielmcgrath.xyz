@@ -1,15 +1,17 @@
-import ContentWrapper from "../layouts/contentwrapper";
+import { Box } from "rebass";
 import Fade from "react-reveal/Fade";
 import Link from "gatsby-link";
 import React from "react";
+import { graphql } from "gatsby";
 import styled from "styled-components";
+import { withTheme } from "styled-components";
 
 const StyledLink = styled(Link)`
   color: #000;
   text-decoration: none;
   &:hover {
     color: #7c3319;
-    textdecoration: none;
+    text-decoration: none;
   }
 `;
 
@@ -17,11 +19,12 @@ const SlugWrapper = styled.div`
   color: #000;
   &:hover {
     color: #7c3319;
-    textdecoration: none;
+    text-decoration: none;
   }
 `;
-const Blog = ({ data }) => (
-  <ContentWrapper>
+
+const Blog = ({ data, theme }) => (
+  <Box width={theme.defaultWidths}>
     <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
     {data.allMarkdownRemark.edges.map(({ node }, i) => (
       <Fade bottom delay={i * 100} key={node.id}>
@@ -38,11 +41,11 @@ const Blog = ({ data }) => (
         </SlugWrapper>
       </Fade>
     ))}
-  </ContentWrapper>
+  </Box>
 );
 
 export const query = graphql`
-  query IndexQuery {
+  query {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {
@@ -61,4 +64,4 @@ export const query = graphql`
     }
   }
 `;
-export default Blog;
+export default withTheme(Blog);
