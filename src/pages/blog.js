@@ -1,7 +1,8 @@
-import ContentWrapper from "../layouts/contentwrapper";
+import ContentWrapper from "../components/contentwrapper";
 import Fade from "react-reveal/Fade";
 import Link from "gatsby-link";
 import React from "react";
+import { graphql } from "gatsby";
 import styled from "styled-components";
 
 const StyledLink = styled(Link)`
@@ -9,7 +10,7 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   &:hover {
     color: #7c3319;
-    textdecoration: none;
+    text-decoration: none;
   }
 `;
 
@@ -17,9 +18,10 @@ const SlugWrapper = styled.div`
   color: #000;
   &:hover {
     color: #7c3319;
-    textdecoration: none;
+    text-decoration: none;
   }
 `;
+
 const Blog = ({ data }) => (
   <ContentWrapper>
     <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
@@ -42,7 +44,7 @@ const Blog = ({ data }) => (
 );
 
 export const query = graphql`
-  query IndexQuery {
+  query {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {

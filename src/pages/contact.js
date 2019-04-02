@@ -1,8 +1,6 @@
 import React from "react";
-import Link from "gatsby-link";
-import Helmet from "react-helmet";
-import styled from "styled-components";
 import { navigateTo } from "gatsby-link";
+import styled from "styled-components";
 
 const SubmitButton = styled.button`
   cursor: pointer;
@@ -43,7 +41,7 @@ export default class Contact extends React.Component {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...this.state })
+      body: encode({ "form-name": "contact", ...this.state }),
     })
       .then(() => navigateTo("/thanks"))
       .catch(error => alert(error));

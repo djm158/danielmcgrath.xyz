@@ -1,45 +1,56 @@
 {
-  "name": "danielmcgrath.xyz",
-  "description": "Personal website for Dan McGrath",
-  "version": "1.0.0",
-  "author": "Dan McGrath <daniel.mcgrath9@gmail.com>",
+  "name": "gatsby-starter-default",
+  "private": true,
+  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "version": "0.1.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "gatsby": "^1.9.188",
-    "gatsby-link": "^1.6.36",
-    "gatsby-plugin-react-helmet": "^2.0.4",
-    "gatsby-plugin-sharp": "^1.6.40",
-    "gatsby-plugin-sitemap": "^1.2.13",
-    "gatsby-plugin-styled-components": "^2.0.11",
-    "gatsby-plugin-typography": "^1.7.13",
-    "gatsby-remark-images": "^1.5.56",
-    "gatsby-remark-prismjs": "^1.2.17",
-    "gatsby-source-filesystem": "^1.5.18",
-    "gatsby-transformer-remark": "^1.7.31",
+    "babel-plugin-styled-components": "^1.10.0",
+    "gatsby": "^2.2.11",
+    "gatsby-image": "^2.0.34",
+    "gatsby-plugin-layout": "^1.0.13",
+    "gatsby-plugin-manifest": "^2.0.24",
+    "gatsby-plugin-offline": "^2.0.25",
+    "gatsby-plugin-react-helmet": "^3.0.11",
+    "gatsby-plugin-sharp": "^2.0.31",
+    "gatsby-plugin-styled-components": "^3.0.7",
+    "gatsby-plugin-typography": "^2.2.10",
+    "gatsby-remark-prismjs": "^3.2.6",
+    "gatsby-source-filesystem": "^2.0.28",
+    "gatsby-transformer-remark": "^2.3.8",
+    "gatsby-transformer-sharp": "^2.1.17",
+    "prismjs": "^1.16.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
     "react-helmet": "^5.2.0",
     "react-reveal": "^1.2.2",
-    "react-typography": "^0.16.13",
+    "react-typography": "^0.16.19",
     "rebass": "^3.1.0",
-    "styled-components": "^3.4.10",
-    "typography-theme-lincoln": "^0.15.11"
+    "styled-components": "^4.2.0",
+    "typography": "^0.16.19",
+    "typography-theme-lincoln": "^0.16.19"
+  },
+  "devDependencies": {
+    "prettier": "^1.16.4"
   },
   "keywords": [
     "gatsby"
   ],
   "license": "MIT",
-  "main": "n/a",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
-  "devDependencies": {
-    "babel-plugin-styled-components": "^1.10.0",
-    "prettier": "^1.10.2"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
   },
-  "babel": {
-    "plugins": [
-      "babel-plugin-styled-components"
-    ]
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }

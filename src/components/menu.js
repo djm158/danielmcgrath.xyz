@@ -1,4 +1,4 @@
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import Logo from "../components/logo";
 import React from "react";
 import styled from "styled-components";
@@ -51,13 +51,13 @@ const SideNav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
- }
 `;
 
 const LinkList = styled.ul`
   list-style-type: none;
   margin: 0;
 `;
+
 const SideLink = styled(Link)`
   line-height: 2rem;
   text-decoration: none;
@@ -86,6 +86,12 @@ const SideLink = styled(Link)`
   }
 `;
 
+const MenuButton = styled.div`
+  cursor: pointer;
+  /* TODO: theme this OSLT */
+  color: #7b3218; 
+`;
+
 class Menu extends React.Component {
   constructor(props) {
     super(props);
@@ -102,8 +108,9 @@ class Menu extends React.Component {
     return (
       <StyledWrapper>
         <Header>
-          <a onClick={this.handleClick}>Menu</a>
+          <MenuButton onClick={this.handleClick}>Menu</MenuButton>
           <Logo />
+          {/* TODO: fix this */}
           <div>&nbsp; &nbsp; &nbsp; &nbsp;</div>
         </Header>
         <Overlay open={this.state.isToggle}>
