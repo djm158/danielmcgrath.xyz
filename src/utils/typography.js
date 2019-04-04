@@ -32,7 +32,7 @@ lincolnTheme.overrideThemeStyles = ({ rhythm }) => {
 lincolnTheme.googleFonts = [
   {
     name: "Inconsolata",
-    styles: ["700"],
+    styles: ["700", "400"],
   },
 ];
 lincolnTheme.headerFontFamily = ["Inconsolata", "monospace"];

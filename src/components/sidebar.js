@@ -23,10 +23,11 @@ const SideBarWrapper = styled.header`
   }
 
   @media (min-width: 768px) {
-    width: 33%;
+    width: 240px;
   }
+  
   @media (min-width: 1024px) {
-    width: 280px;
+    width: 300px;
   }
 `;
 

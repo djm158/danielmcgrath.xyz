@@ -1,6 +1,7 @@
 ---
 title: "Post marathon recap"
 date: "2017-11-25"
+tags: ["Running"]
 ---
 
 ### Race day

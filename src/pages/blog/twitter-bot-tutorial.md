@@ -1,6 +1,7 @@
 ---
 title: "How to build a twitter bot with Node.js and Heroku"
 date: "2018-03-05"
+tags: ["web development"]
 ---
 
 In this tutorial, we are going to create a twitter bot that tweets open Github issues with the tag 'help wanted'.

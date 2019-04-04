@@ -1,7 +1,9 @@
-import { Box } from "rebass";
+import { Box, Flex } from "rebass";
+
 import Fade from "react-reveal/Fade";
 import Link from "gatsby-link";
 import React from "react";
+import { Tag } from "../components/tag";
 import { graphql } from "gatsby";
 import styled from "styled-components";
 import { withTheme } from "styled-components";
@@ -30,13 +32,21 @@ const Blog = ({ data, theme }) => (
       <Fade bottom delay={i * 100} key={node.id}>
         <SlugWrapper>
           <StyledLink to={node.fields.slug}>
-            <h3>
+            {/* TODO: no inline styles */}
+            <h3 style={{ "fontWeight": "700" }}>
               {node.frontmatter.title}{" "}
               <span style={{ color: "#BBB", textDecoration: "none" }}>
                 — {node.frontmatter.date}
               </span>
             </h3>
-            <p>{node.excerpt}</p>
+            <Box>
+              {node.excerpt}
+              <Flex justifyContent="flex-start" mt={2}>
+                {node.frontmatter.tags.map((t, i) => (
+                  <Tag key={i}>{t.toUpperCase()}</Tag>
+                ))}
+              </Flex>
+            </Box>
           </StyledLink>
         </SlugWrapper>
       </Fade>
@@ -54,6 +64,7 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            tags
           }
           fields {
             slug

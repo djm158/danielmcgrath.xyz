@@ -1,6 +1,7 @@
 ---
 title: "Building my first website"
 date: "2017-11-07"
+tags: ["web development"]
 ---
 
 ## Hello, world!

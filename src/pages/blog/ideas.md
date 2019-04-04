@@ -1,6 +1,7 @@
 ---
 title: "How to come up with ideas as an engineer"
 date: "2017-11-13"
+tags: ["entrepreneurship", "school"]
 ---
 
 I'm an engineer. I'm good at math and science and I like playing with computers. I've always assumed that I would be the guy that creative problem solvers go to when they need a technical solution. I'm the paintbrush that the 21st century Da Vinci's and Michelangelo's wield when they need something solved. After spending four years of classes with other engineers, I've realized this mindset isn't unique. Often times when a professor gives us free reign to create, many of my technically inclined peers are stymied. I can solve problems when the parameters and requirements are clearly defined, but struggle when I have to create and define those parameters. For example, at the beginning of a startup fundamentals class I'm taking at Pitt, we had to come up with ideas to pitch as potential startups. I assumed that in a class about **starting start-ups** someone would pitch their idea for the next Facebook and I'd join their team and iterate on the idea. This wasn't the case. I was shocked when most of us shrugged our shoulders when asked if we had any ideas, so I decided to try to come up with my own. 

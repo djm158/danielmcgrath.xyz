@@ -24,10 +24,10 @@ const MainWrapper = styled.div`
 const Main = styled.div`
   background: white;
   @media (min-width: 768px) {
-    margin-left: 33%;
+    margin-left: 240px;
   }
   @media (min-width: 1024px) {
-    margin-left: 280px;
+    margin-left: 300px;
   }
 `;
 
