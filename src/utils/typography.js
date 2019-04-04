@@ -40,6 +40,7 @@ lincolnTheme.googleFonts = [
 lincolnTheme.headerFontFamily = ["Inconsolata", "monospace"];
 lincolnTheme.bodyFontFamily = ["Noto Sans", "sans-serif"];
 lincolnTheme.baseFontSize = "20px";
+lincolnTheme.headerWeight = 700;
 const typography = new Typography(lincolnTheme);
 
 export default typography;
