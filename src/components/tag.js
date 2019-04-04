@@ -1,3 +1,8 @@
+// TODOS:
+//  * remove inline css style
+//  * factor out modified card component
+//  * add prop types
+
 import { Card as RebassCard, Text } from "rebass";
 import { maxWidth, minWidth } from "styled-system";
 
