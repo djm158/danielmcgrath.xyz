@@ -33,7 +33,7 @@ const Blog = ({ data, theme }) => (
         <SlugWrapper>
           <StyledLink to={node.fields.slug}>
             {/* TODO: no inline styles */}
-            <h3 style={{ "fontWeight": "700" }}>
+            <h3 style={{ fontWeight: "700" }}>
               {node.frontmatter.title}{" "}
               <span style={{ color: "#BBB", textDecoration: "none" }}>
                 — {node.frontmatter.date}
@@ -42,8 +42,8 @@ const Blog = ({ data, theme }) => (
             <Box>
               {node.excerpt}
               <Flex justifyContent="flex-start" mt={2}>
-                {node.frontmatter.tags.map((t, i) => (
-                  <Tag key={i}>{t.toUpperCase()}</Tag>
+                {node.frontmatter.tags.map(t => (
+                  <Tag key={node.id + t}> {t.toUpperCase()}</Tag>
                 ))}
               </Flex>
             </Box>

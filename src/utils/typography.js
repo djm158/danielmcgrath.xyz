@@ -1,3 +1,5 @@
+// TODO: don't use a theme, use own theme
+
 import Typography from "typography";
 import lincolnTheme from "typography-theme-lincoln";
 
@@ -22,20 +24,21 @@ lincolnTheme.overrideThemeStyles = ({ rhythm }) => {
       marginTop: rhythm(1.2),
       marginBottom: rhythm(0.5),
     },
-    code: {
-      backgroundColor: "rgba(0,0,0,0.1)",
-      padding: "2px",
-    },
   };
 };
 
 lincolnTheme.googleFonts = [
+  {
+    name: "Noto Sans",
+    styles: ["700", "400"],
+  },
   {
     name: "Inconsolata",
     styles: ["700", "400"],
   },
 ];
 lincolnTheme.headerFontFamily = ["Inconsolata", "monospace"];
+lincolnTheme.bodyFontFamily = ["Noto Sans", "sans-serif"];
 lincolnTheme.baseFontSize = "20px";
 const typography = new Typography(lincolnTheme);
 

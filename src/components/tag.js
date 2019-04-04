@@ -1,15 +1,11 @@
-// TODOS:
-//  * remove inline css style
-//  * factor out modified card component
-//  * add prop types
-
 import { Card as RebassCard, Text } from "rebass";
-import { maxWidth, minWidth } from "styled-system";
+import { maxWidth, minWidth, opacity } from "styled-system";
 
+import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
 
-const Card = styled(RebassCard)(minWidth, maxWidth);
+const Card = styled(RebassCard)(minWidth, maxWidth, opacity);
 
 export const Tag = ({ children }) => (
   <Card
@@ -17,11 +13,11 @@ export const Tag = ({ children }) => (
     borderRadius={8}
     maxWidth={[200]}
     mr={2}
-    pb={1}
-    pl={2}
-    pr={2}
-    pt={1}
-    style={{ opacity: "0.7" }}
+    opacity={0.7}
+    pb={[0.5,1]}
+    pl={[1,2]}
+    pr={[1,2]}
+    pt={[0.5,1]}
   >
     <Text
       color="white"
@@ -34,3 +30,7 @@ export const Tag = ({ children }) => (
     </Text>
   </Card>
 );
+
+Tag.propTypes = {
+  children: PropTypes.node,
+};
