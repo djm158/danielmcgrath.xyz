@@ -26,7 +26,7 @@ export const Tag = ({ children }) => (
     <Text
       color="white"
       fontFamily="Inconsolata"
-      fontSize={1}
+      fontSize={[12, 1]}
       fontWeight={400}
       letterSpacing={1.5}
     >
