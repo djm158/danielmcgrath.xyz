@@ -29,10 +29,10 @@ module.exports = {
             resolve: `gatsby-remark-prismjs`,
             options: {
               showLineNumbers: true,
-            }
-          }
-        ]
-      }
+            },
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -49,19 +49,28 @@ module.exports = {
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
-        displayName: true
+        displayName: true,
+      },
+    },
+    {
+      resolve: `gatsby-source-dropbox`,
+      options: {
+        accessToken: `${process.env.DROPBOX_ACCESS_TOKEN}`,
+        extensions: [".pdf"],
+        path: "",
+        recursive: false,
       },
     },
     // dont' want to re render my css transition stuff
     {
       resolve: `gatsby-plugin-layout`,
       options: {
-          component: require.resolve(`./src/components/layout`)
-      }
-  }
-    
+        component: require.resolve(`./src/components/layout`),
+      },
+    },
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // 'gatsby-plugin-offline',
   ],
-}
+};
