@@ -1,9 +1,10 @@
+import { StaticQuery, graphql } from "gatsby";
+
 import Fade from "react-reveal/Fade";
 import { Link } from "gatsby";
 import Logo from "./logo";
 import React from "react";
 import styled from "styled-components";
-import { StaticQuery, graphql } from "gatsby";
 
 const SideBarWrapper = styled.header`
   display: flex;

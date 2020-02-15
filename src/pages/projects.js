@@ -4,6 +4,7 @@ import crank from "../images/crank.png";
 import drone from "../images/drone.png";
 import emoji from "../images/dan-emoji.png";
 import robot from "../images/robot.png";
+import stopwatch from "../images/stopwatch.png";
 import styled from "styled-components";
 
 const Card = styled.div`
@@ -60,6 +61,20 @@ const ProjectsPage = () => (
           <p>
             <a href="https://github.com/djm158/danielmcgrath.xyz">
               This website!
+            </a>
+          </p>
+        </CardContent>
+      </Card>
+    </Fade>
+
+    <Fade right>
+      <Card>
+        <CardImg src={stopwatch} />
+        <CardContent>
+          <span>Run calculator</span>
+          <p>
+            <a href="https://github.com/djm158/runcalculator">
+              A calculator for determining pace, time, and distance
             </a>
           </p>
         </CardContent>
