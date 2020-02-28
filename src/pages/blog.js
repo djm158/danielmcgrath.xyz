@@ -1,9 +1,9 @@
-import { Box, Flex } from "rebass";
+import { Box, Flex, Text } from "rebass";
 
 import Fade from "react-reveal/Fade";
 import Link from "gatsby-link";
 import React from "react";
-import { Tag } from "../components/tag";
+import { Tag } from "../components/Tag";
 import { graphql } from "gatsby";
 import styled from "styled-components";
 import { withTheme } from "styled-components";
@@ -25,6 +25,11 @@ const SlugWrapper = styled.div`
   }
 `;
 
+const DateText = styled(Text)`
+  color: #bbb;
+  text-decoration: none;
+`;
+
 const Blog = ({ data, theme }) => (
   <Box width={theme.defaultWidths}>
     <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
@@ -32,18 +37,16 @@ const Blog = ({ data, theme }) => (
       <Fade bottom delay={i * 100} key={node.id}>
         <SlugWrapper>
           <StyledLink to={node.fields.slug}>
-            {/* TODO: no inline styles */}
-            <h3 style={{ fontWeight: "700" }}>
+            {/* TODO: use rebass heading */}
+            <h3>
               {node.frontmatter.title}{" "}
-              <span style={{ color: "#BBB", textDecoration: "none" }}>
-                — {node.frontmatter.date}
-              </span>
+              <DateText as="span">— {node.frontmatter.date}</DateText>
             </h3>
             <Box>
-              {node.excerpt}
+              <Text>{node.excerpt}</Text>
               <Flex justifyContent="flex-start" mt={2}>
-                {node.frontmatter.tags.map(t => (
-                  <Tag key={node.id + t}> {t.toUpperCase()}</Tag>
+                {node.frontmatter.tags.map(tag => (
+                  <Tag key={node.id + tag}> {tag.toUpperCase()}</Tag>
                 ))}
               </Flex>
             </Box>

@@ -4,7 +4,7 @@ import { NavList } from "./NavList";
 import React from "react";
 import styled from "styled-components";
 
-const SideBarWrapper = styled.header`
+const FixedSideBar = styled.header`
   display: flex;
   align-content: center;
   align-items: center;
@@ -36,14 +36,14 @@ const SideNav = styled.nav`
 `;
 
 const SideBar = () => (
-  <SideBarWrapper>
+  <FixedSideBar>
     <Fade delay={100}>
       <Logo />
     </Fade>
     <SideNav>
       <NavList />
     </SideNav>
-  </SideBarWrapper>
+  </FixedSideBar>
 );
 
 export default SideBar;
