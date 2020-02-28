@@ -1,6 +1,7 @@
-import { Link } from "gatsby";
+import React, { useState } from "react";
+
 import Logo from "../components/logo";
-import React from "react";
+import { NavList } from "./NavList";
 import styled from "styled-components";
 
 const Overlay = styled.div`
@@ -53,100 +54,34 @@ const SideNav = styled.nav`
   justify-content: center;
 `;
 
-const LinkList = styled.ul`
-  list-style-type: none;
-  margin: 0;
-`;
-
-const SideLink = styled(Link)`
-  line-height: 2rem;
-  text-decoration: none;
-  position: relative;
-  color: #000;
-  font-size: 24px;
-  &:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #000;
-    visibility: hidden;
-    transform: scaleX(0);
-    -webkit-transform: scaleX(0);
-    transition: all 0.3s ease-in-out 0s;
-    -webkit-transition: all 0.3s ease-in-out 0s;
-  }
-
-  &:hover:before {
-    visibility: visible;
-    transform: scaleX(1);
-    -webkit-transform: scaleX(1);
-  }
-`;
-
 const MenuButton = styled.div`
   cursor: pointer;
   /* TODO: theme this OSLT */
-  color: #7b3218; 
+  color: #7b3218;
 `;
 
-class Menu extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { isToggle: false };
+export const Menu = () => {
+  const [isToggle, setIsToggle] = useState(false);
 
-    this.handleClick = this.handleClick.bind(this);
-  }
+  const handleClick = () => {
+    setIsToggle(!isToggle);
+  };
 
-  handleClick() {
-    this.setState(prevState => ({ isToggle: !prevState.isToggle }));
-  }
-
-  render() {
-    return (
-      <StyledWrapper>
-        <Header>
-          <MenuButton onClick={this.handleClick}>Menu</MenuButton>
-          <Logo />
-          {/* TODO: fix this */}
-          <div>&nbsp; &nbsp; &nbsp; &nbsp;</div>
-        </Header>
-        <Overlay open={this.state.isToggle}>
-          <SideNav>
-            <LinkList>
-              <li>
-                <SideLink onClick={this.handleClick} to="/">
-                  Home
-                </SideLink>
-              </li>
-              <li>
-                <SideLink onClick={this.handleClick} to="/projects">
-                  Projects
-                </SideLink>
-              </li>
-              <li>
-                <SideLink onClick={this.handleClick} to="/blog/">
-                  Blog
-                </SideLink>
-              </li>
-              <li>
-                <SideLink onClick={this.handleClick} to="/about">
-                  About
-                </SideLink>
-              </li>
-              <li>
-                <SideLink onClick={this.handleClick} to="/contact">
-                  Contact
-                </SideLink>
-              </li>
-            </LinkList>
-          </SideNav>
-        </Overlay>
-      </StyledWrapper>
-    );
-  }
-}
+  return (
+    <StyledWrapper>
+      <Header>
+        <MenuButton onClick={handleClick}>Menu</MenuButton>
+        <Logo />
+        {/* TODO: fix this */}
+        <div>&nbsp; &nbsp; &nbsp; &nbsp;</div>
+      </Header>
+      <Overlay open={isToggle}>
+        <SideNav>
+          <NavList />
+        </SideNav>
+      </Overlay>
+    </StyledWrapper>
+  );
+};
 
 export default Menu;
