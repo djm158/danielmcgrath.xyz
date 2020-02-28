@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import Logo from "../components/logo";
+import Logo from "./logo";
 import { NavList } from "./NavList";
 import styled from "styled-components";
 
@@ -60,7 +60,7 @@ const MenuButton = styled.div`
   color: #7b3218;
 `;
 
-export const Menu = () => {
+export const MobileMenu = () => {
   const [isToggle, setIsToggle] = useState(false);
 
   const handleClick = () => {
@@ -84,4 +84,4 @@ export const Menu = () => {
   );
 };
 
-export default Menu;
+export default MobileMenu;

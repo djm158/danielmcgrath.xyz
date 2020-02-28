@@ -1,6 +1,6 @@
 import { StaticQuery, graphql } from "gatsby";
 
-import Menu from "./menu";
+import MobileMenu from "./MobileMenu";
 import PropTypes from "prop-types";
 import React from "react";
 import SideBar from "./sidebar";
@@ -56,7 +56,7 @@ const Layout = ({ children }) => (
     `}
     render={() => (
       <>
-        <Menu />
+        <MobileMenu />
         <ThemeProvider theme={theme}>
           <PageWrapper>
             <SideBar />

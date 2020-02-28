@@ -71,21 +71,21 @@ export default class Contact extends React.Component {
             </label>
           </p>
           <p>
-            <label for="name">
+            <label htmlFor="name">
               Your name:
               <br />
               <Input type="text" name="name" onChange={this.handleChange} />
             </label>
           </p>
           <p>
-            <label for="email">
+            <label htmlFor="email">
               Your email:
               <br />
               <Input type="email" name="email" onChange={this.handleChange} />
             </label>
           </p>
           <p>
-            <label for="message">
+            <label htmlFor="message">
               Message:
               <br />
               <TextArea name="message" onChange={this.handleChange} />

@@ -1,6 +1,6 @@
 import Fade from "react-reveal/Fade";
 import React from "react";
-import SEO from "../components/seo";
+import SEO from "../components/Seo";
 
 const IndexPage = () => {
   return (
