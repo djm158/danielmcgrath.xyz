@@ -10,18 +10,8 @@ import { withTheme } from "styled-components";
 
 const StyledLink = styled(Link)`
   color: #000;
-  text-decoration: none;
   &:hover {
     color: #7c3319;
-    text-decoration: none;
-  }
-`;
-
-const SlugWrapper = styled.div`
-  color: #000;
-  &:hover {
-    color: #7c3319;
-    text-decoration: none;
   }
 `;
 
@@ -35,23 +25,21 @@ const Blog = ({ data, theme }) => (
     <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
     {data.allMarkdownRemark.edges.map(({ node }, i) => (
       <Fade bottom delay={i * 100} key={node.id}>
-        <SlugWrapper>
-          <StyledLink to={node.fields.slug}>
-            {/* TODO: use rebass heading */}
-            <h3>
-              {node.frontmatter.title}{" "}
-              <DateText as="span">— {node.frontmatter.date}</DateText>
-            </h3>
-            <Box>
-              <Text>{node.excerpt}</Text>
-              <Flex justifyContent="flex-start" mt={2}>
-                {node.frontmatter.tags.map(tag => (
-                  <Tag key={node.id + tag}> {tag.toUpperCase()}</Tag>
-                ))}
-              </Flex>
-            </Box>
-          </StyledLink>
-        </SlugWrapper>
+        <StyledLink to={node.fields.slug}>
+          {/* TODO: use rebass heading */}
+          <h3>
+            {node.frontmatter.title}{" "}
+            <DateText as="span">— {node.frontmatter.date}</DateText>
+          </h3>
+          <Box>
+            <Text>{node.excerpt}</Text>
+            <Flex justifyContent="flex-start" mt={2}>
+              {node.frontmatter.tags.map(tag => (
+                <Tag key={node.id + tag}> {tag.toUpperCase()}</Tag>
+              ))}
+            </Flex>
+          </Box>
+        </StyledLink>
       </Fade>
     ))}
   </Box>
