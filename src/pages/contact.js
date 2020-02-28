@@ -1,10 +1,12 @@
 import React from "react";
 import { navigateTo } from "gatsby-link";
 import styled from "styled-components";
+import { Button } from "rebass"
 
 // TODO: component
-const SubmitButton = styled.button`
+const SubmitButton = styled(Button)`
   cursor: pointer;
+  background: #7c3319;
 `;
 
 // TODO: component

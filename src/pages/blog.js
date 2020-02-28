@@ -17,7 +17,6 @@ const StyledLink = styled(Link)`
 
 const DateText = styled(Text)`
   color: #bbb;
-  text-decoration: none;
 `;
 
 const Blog = ({ data, theme }) => (
