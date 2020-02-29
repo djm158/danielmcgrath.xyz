@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { navigateTo } from "gatsby-link";
 import styled from "styled-components";
-import { Button } from "rebass"
+import { Button } from "rebass";
 
 // TODO: component
 const SubmitButton = styled(Button)`
@@ -33,21 +33,16 @@ function encode(data) {
     .join("&");
 }
 
-export default class Contact extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+const Contact = () => {
+  const [message, setMessage] = useState("");
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
 
-  handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
-
-  handleSubmit = e => {
+  const handleSubmit = e => {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...this.state }),
+      body: encode({ "form-name": "contact", name, email, message }),
     })
       .then(() => navigateTo("/thanks"))
       .catch(error => alert(error));
@@ -55,49 +50,60 @@ export default class Contact extends React.Component {
     e.preventDefault();
   };
 
-  render() {
-    return (
-      <div>
-        <h1>Contact</h1>
-        <form
-          name="contact"
-          method="post"
-          action="/thanks/"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          onSubmit={this.handleSubmit}
-        >
-          <p hidden>
-            <label>
-              Don’t fill this out: <input name="bot-field" />
-            </label>
-          </p>
-          <p>
-            <label htmlFor="name">
-              Your name:
-              <br />
-              <Input type="text" name="name" onChange={this.handleChange} />
-            </label>
-          </p>
-          <p>
-            <label htmlFor="email">
-              Your email:
-              <br />
-              <Input type="email" name="email" onChange={this.handleChange} />
-            </label>
-          </p>
-          <p>
-            <label htmlFor="message">
-              Message:
-              <br />
-              <TextArea name="message" onChange={this.handleChange} />
-            </label>
-          </p>
-          <p>
-            <SubmitButton type="submit">Send</SubmitButton>
-          </p>
-        </form>
-      </div>
-    );
-  }
-}
+  return (
+    <>
+      <h1>Contact</h1>
+      <form
+        name="contact"
+        method="post"
+        action="/thanks/"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
+      >
+        <p hidden>
+          <label>
+            Don’t fill this out: <input name="bot-field" />
+          </label>
+        </p>
+        <p>
+          <label htmlFor="name">
+            Your name:
+            <br />
+            <Input
+              type="text"
+              name="name"
+              onChange={e => setName(e.target.value)}
+            />
+          </label>
+        </p>
+        <p>
+          <label htmlFor="email">
+            Your email:
+            <br />
+            <Input
+              type="email"
+              name="email"
+              onChange={e => setEmail(e.target.value)}
+            />
+          </label>
+        </p>
+        <p>
+          <label htmlFor="message">
+            Message:
+            <br />
+            <TextArea
+              name="message"
+              onChange={e => setMessage(e.target.value)}
+            />
+          </label>
+        </p>
+        <p>
+          <SubmitButton type="submit">Send</SubmitButton>
+        </p>
+      </form>
+    </>
+  );
+};
+
+export default Contact;

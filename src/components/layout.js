@@ -31,7 +31,7 @@ const Main = styled.div`
   }
 `;
 
-const MainContent = styled.div`
+const MainContent = styled.main`
   min-height: 642px;
   padding: calc(48px + 32 * (100vw - 320px) / 1120);
   @media screen and (min-width: 320px) {

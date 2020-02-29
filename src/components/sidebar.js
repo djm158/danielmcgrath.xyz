@@ -3,13 +3,9 @@ import Logo from "./logo";
 import { NavList } from "./NavList";
 import React from "react";
 import styled from "styled-components";
+import { Flex } from "rebass";
 
 const FixedSideBar = styled.header`
-  display: flex;
-  align-content: center;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
   padding: calc(24px + 16 * (100vw - 320px) / 1120);
   background: #d3d3d3;
   left: 0;
@@ -30,19 +26,14 @@ const FixedSideBar = styled.header`
   }
 `;
 
-const SideNav = styled.nav`
-  display: flex;
-  justify-content: center;
-`;
-
 const SideBar = () => (
   <FixedSideBar>
-    <Fade delay={100}>
-      <Logo />
-    </Fade>
-    <SideNav>
+    <Flex alignItems="center" flexDirection="column">
+      <Fade delay={100}>
+        <Logo />
+      </Fade>
       <NavList />
-    </SideNav>
+    </Flex>
   </FixedSideBar>
 );
 

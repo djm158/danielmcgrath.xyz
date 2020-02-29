@@ -5,7 +5,6 @@ import React from "react";
 import styled from "styled-components";
 import { withTheme } from "styled-components";
 
-// TODO: move to components
 const IconLink = styled.a`
   > svg {
     height: 40px;
