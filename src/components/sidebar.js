@@ -1,4 +1,3 @@
-import Fade from "react-reveal/Fade";
 import Logo from "./logo";
 import { NavList } from "./NavList";
 import React from "react";
@@ -29,9 +28,9 @@ const FixedSideBar = styled.header`
 const SideBar = () => (
   <FixedSideBar>
     <Flex alignItems="center" flexDirection="column">
-      <Fade delay={100}>
+      <div data-sal="fade" data-sal-easing="ease" data-sal-duration="400">
         <Logo />
-      </Fade>
+      </div>
       <NavList />
     </Flex>
   </FixedSideBar>
