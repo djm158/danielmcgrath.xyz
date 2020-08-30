@@ -1,6 +1,5 @@
 import { Link, StaticQuery, graphql } from "gatsby";
 
-import Fade from "react-reveal/Fade";
 import React from "react";
 import styled from "styled-components";
 
@@ -48,36 +47,71 @@ export const NavList = () => (
     `}
     render={data => (
       <LinkList>
-        <Fade left>
+        <div
+          data-sal="slide-right"
+          data-sal-delay="0"
+          data-sal-easing="ease"
+          data-sal-duration="400"
+        >
           <li>
             <SideLink to="/">Home</SideLink>
           </li>
-        </Fade>
-        <Fade left>
+        </div>
+        <div
+          data-sal="slide-right"
+          data-sal-delay="100"
+          data-sal-easing="ease"
+          data-sal-duration="400"
+        >
           <li>
             <SideLink to="/projects">Projects</SideLink>
           </li>
-        </Fade>
-        <Fade left delay={100}>
+        </div>
+        <div
+          data-sal="slide-right"
+          data-sal-delay="200"
+          data-sal-easing="ease"
+          data-sal-duration="400"
+        >
           <li>
             <SideLink to="/blog/">Blog</SideLink>
           </li>
-        </Fade>
-        <Fade left delay={200}>
+        </div>
+        <div
+          data-sal="slide-right"
+          data-sal-delay="300"
+          data-sal-easing="ease"
+          data-sal-duration="400"
+        >
           <li>
             <SideLink to="/about">About</SideLink>
           </li>
-        </Fade>
-        <Fade left delay={300}>
+        </div>
+        <div
+                  data-sal="slide-right"
+                  data-sal-delay="400"
+                  data-sal-easing="ease"
+                  data-sal-duration="400"
+        >
           <li>
             <SideLink to="/contact">Contact</SideLink>
           </li>
-        </Fade>
-        <Fade left delay={400}>
+        </div>
+        <div
+          data-sal="slide-right"
+          data-sal-delay="500"
+          data-sal-easing="ease"
+          data-sal-duration="400"
+        >
           <li>
-            <SideLink as="a" href={data && data.file ? data.file.publicURL : ""}>Resume</SideLink>
+            <SideLink
+              as="a"
+              href={data && data.file ? data.file.publicURL : ""}
+            >
+              Resume
+            </SideLink>
           </li>
-        </Fade>
+        </div>
       </LinkList>
     )}
   />

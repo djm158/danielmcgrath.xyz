@@ -1,4 +1,3 @@
-import Fade from "react-reveal/Fade";
 import React from "react";
 import SEO from "../components/Seo";
 
@@ -9,7 +8,7 @@ const IndexPage = () => {
         title="Daniel McGrath | Portfolio"
         keywords={[`developer`, `software`, `engineer`]}
       />
-      <Fade delay={100}>
+      <div data-sal="slide-up" data-sal-easing="ease" data-sal-duration="400">
         <h1>Hello!</h1>
         <p>I'm Dan.</p>
         <p>
@@ -26,7 +25,7 @@ const IndexPage = () => {
           Checkout my <a href="https://github.com/djm158">GitHub</a> for some of
           my work!
         </p>
-      </Fade>
+      </div>
     </>
   );
 };
