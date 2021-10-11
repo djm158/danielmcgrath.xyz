@@ -1,7 +1,7 @@
 import { Box, Flex, Text } from "rebass";
 
 import Fade from "react-reveal/Fade";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import React from "react";
 import { Tag } from "../components/Tag";
 import { graphql } from "gatsby";

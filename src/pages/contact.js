@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { navigateTo } from "gatsby-link";
+import { navigate } from "gatsby-link";
 import styled from "styled-components";
 import { Button } from "rebass";
 
@@ -44,7 +44,7 @@ const Contact = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", name, email, message }),
     })
-      .then(() => navigateTo("/thanks"))
+      .then(() => navigate("/thanks"))
       .catch(error => alert(error));
 
     e.preventDefault();
