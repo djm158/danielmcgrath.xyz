@@ -13,8 +13,8 @@ const IndexPage = () => {
         <p>I'm Dan.</p>
         <p>
           I'm a full stack developer at{" "}
-          <a href="https://www.vistarmedia.com/">Vistar Media</a> based in
-          Philadelphia.
+          <a href="https://www.wizehive.com/">WizeHive</a> based in
+          Conshohocken.
         </p>
         <p>
           I have a diverse background ranging from embedded systems to front end
