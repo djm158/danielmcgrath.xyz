@@ -34,3 +34,10 @@ $ gatsby build
 ```sh
 $ netlify deploy public/
 ```
+
+## Resume
+
+Resume is built statically via `gatsby-source-dropbox`
+
+In order to generate the node, you need to have the environment variable `DROPBOX_ACCESS_TOKEN`
+set.
