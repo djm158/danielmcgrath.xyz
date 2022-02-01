@@ -5,6 +5,7 @@ import drone from "../images/drone.png";
 import emoji from "../images/dan-emoji.png";
 import robot from "../images/robot.png";
 import stopwatch from "../images/stopwatch.png";
+import calculator from "../images/calculator.png";
 import styled from "styled-components";
 
 const Card = styled.div`
@@ -69,7 +70,7 @@ const ProjectsPage = () => (
 
     <Fade right>
       <Card>
-        <CardImg src={stopwatch} />
+        <CardImg src={calculator} />
         <CardContent>
           <span>Run calculator</span>
           <p>
@@ -117,6 +118,17 @@ const ProjectsPage = () => (
             <a href="https://github.com/djm158/help-wanted-bot">
               Find issues that need help!
             </a>
+          </p>
+        </CardContent>
+      </Card>
+    </Fade>
+    <Fade right delay={400}>
+      <Card>
+        <CardImg src={stopwatch} />
+        <CardContent>
+          <span>Pomo Dojo</span>
+          <p>
+            <a href="https://github.com/djm158/pomo">Pomodoro Timer</a>
           </p>
         </CardContent>
       </Card>
