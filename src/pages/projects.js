@@ -6,6 +6,7 @@ import emoji from "../images/dan-emoji.png";
 import robot from "../images/robot.png";
 import stopwatch from "../images/stopwatch.png";
 import calculator from "../images/calculator.png";
+import forkmeimg from "../images/forkmegithub.png";
 import styled from "styled-components";
 
 const Card = styled.div`
@@ -21,6 +22,7 @@ const Card = styled.div`
   width: 200px;
   transition: box-shadow 0.3s;
   padding-top: 10px;
+  position: relative;
 
   &:hover {
     box-shadow: 0 0 10px rgba(33, 33, 33, 0.6);
@@ -52,88 +54,85 @@ const FlexWrapper = styled.div`
   }
 `;
 
+const ForkMeGithub = styled.img`
+  position: absolute;
+  top: 0;
+  right: 0;
+`;
+
 const ProjectsPage = () => (
   <FlexWrapper>
     <Fade right>
-      <Card>
-        <CardImg src={emoji} />
-        <CardContent>
-          <span>danielmcgrath.xyz</span>
-          <p>
-            <a href="https://github.com/djm158/danielmcgrath.xyz">
-              This website!
-            </a>
-          </p>
-        </CardContent>
-      </Card>
+      <ProjectCard
+        icon={emoji}
+        githubUrl="https://github.com/djm158/danielmcgrath.xyz"
+        title="danielmcgrath.xyz"
+        linkText="This website!"
+      />
     </Fade>
-
     <Fade right>
-      <Card>
-        <CardImg src={calculator} />
-        <CardContent>
-          <span>Run calculator</span>
-          <p>
-            <a href="https://github.com/djm158/runcalculator">
-              A calculator for determining pace, time, and distance
-            </a>
-          </p>
-        </CardContent>
-      </Card>
+      <ProjectCard
+        icon={calculator}
+        githubUrl="https://github.com/djm158/runcalculator"
+        title="Run calculator"
+        linkText="A calculator for determining pace, time, and distance"
+      />
     </Fade>
-
     <Fade right delay={100}>
-      <Card>
-        <CardImg src={drone} />
-        <CardContent>
-          <span>Gesture Controlled Quadcopter</span>
-          <p>
-            <a href="https://github.com/dgtc1012/ECE1160_Final_Project">
-              Fly like Iron Man
-            </a>
-          </p>
-        </CardContent>
-      </Card>
+      <ProjectCard
+        icon={drone}
+        githubUrl="https://github.com/djm158/ECE1160_Final_Project"
+        title="Gesture Controlled Quadcopter"
+        linkText="Fly like Iron Man"
+      />
     </Fade>
-
     <Fade right delay={200}>
-      <Card>
-        <CardImg src={crank} />
-        <CardContent>
-          <span>Pedal Power</span>
-          <p>
-            <a href="https://github.com/djm158/PedalPower_Embedded">
-              DIY Power Meter
-            </a>
-          </p>
-        </CardContent>
-      </Card>
+      <ProjectCard
+        icon={crank}
+        githubUrl="https://github.com/djm158/PedalPower_Embedded"
+        title="Pedal Power"
+        linkText="DIY Power Meter"
+      />
     </Fade>
     <Fade right delay={300}>
-      <Card>
-        <CardImg src={robot} />
-        <CardContent>
-          <span>Help wanted bot</span>
-          <p>
-            <a href="https://github.com/djm158/help-wanted-bot">
-              Find issues that need help!
-            </a>
-          </p>
-        </CardContent>
-      </Card>
+      <ProjectCard
+        icon={robot}
+        githubUrl="https://github.com/djm158/help-wanted-bot"
+        title="Help wanted bot"
+        linkText="Find issues that need help!"
+      />
     </Fade>
     <Fade right delay={400}>
-      <Card>
-        <CardImg src={stopwatch} />
-        <CardContent>
-          <span>Pomo Dojo</span>
-          <p>
-            <a href="https://github.com/djm158/pomo">Pomodoro Timer</a>
-          </p>
-        </CardContent>
-      </Card>
+      <ProjectCard
+        icon={stopwatch}
+        githubUrl="https://github.com/djm158/pomo"
+        title="Pomo Dojo"
+        linkText="Pomodoro Timer"
+      />
     </Fade>
   </FlexWrapper>
+);
+
+const ProjectCard = ({ icon, githubUrl, title, linkText }) => (
+  <Card>
+    <CardImg src={icon} />
+    <CardContent>
+      <span>{title}</span>
+      <p>
+        <a href={githubUrl}>{linkText}</a>
+      </p>
+    </CardContent>
+    <a href={githubUrl}>
+      <ForkMeGithub
+        width="110"
+        height="110"
+        src={forkmeimg}
+        class="attachment-full size-full"
+        alt="Fork me on GitHub"
+        data-recalc-dims="1"
+      />
+    </a>
+  </Card>
 );
 
 export default ProjectsPage;
