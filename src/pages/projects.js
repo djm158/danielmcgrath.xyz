@@ -58,6 +58,8 @@ const ForkMeGithub = styled.img`
   position: absolute;
   top: 0;
   right: 0;
+  height: 110px;
+  width: 110px;
 `;
 
 const ProjectsPage = () => (
@@ -124,12 +126,8 @@ const ProjectCard = ({ icon, githubUrl, title, linkText }) => (
     </CardContent>
     <a href={githubUrl}>
       <ForkMeGithub
-        width="110"
-        height="110"
         src={forkmeimg}
-        class="attachment-full size-full"
         alt="Fork me on GitHub"
-        data-recalc-dims="1"
       />
     </a>
   </Card>
