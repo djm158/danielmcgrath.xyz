@@ -18,7 +18,6 @@ const Card = styled.div`
   flex-shrink: 0;
   float: left;
   text-align: center;
-  margin: 20px;
   width: 200px;
   transition: box-shadow 0.3s;
   padding-top: 10px;
@@ -44,14 +43,11 @@ const CardContent = styled.div`
   padding-top: 10px;
 `;
 
-const FlexWrapper = styled.div`
-  display: flex;
-  flex-flow: row wrap;
-  @media (max-width: 567px) {
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-  }
+const ProjectsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-items: center;
+  grid-gap: 1rem;
 `;
 
 const ForkMeGithub = styled.img`
@@ -62,8 +58,23 @@ const ForkMeGithub = styled.img`
   width: 110px;
 `;
 
+const ProjectCard = ({ icon, githubUrl, title, linkText }) => (
+  <Card>
+    <CardImg src={icon} />
+    <CardContent>
+      <span>{title}</span>
+      <p>
+        <a href={githubUrl}>{linkText}</a>
+      </p>
+    </CardContent>
+    <a href={githubUrl}>
+      <ForkMeGithub src={forkmeimg} alt="Fork me on GitHub" />
+    </a>
+  </Card>
+);
+
 const ProjectsPage = () => (
-  <FlexWrapper>
+  <ProjectsContainer>
     <Fade right>
       <ProjectCard
         icon={emoji}
@@ -112,25 +123,7 @@ const ProjectsPage = () => (
         linkText="Pomodoro Timer"
       />
     </Fade>
-  </FlexWrapper>
-);
-
-const ProjectCard = ({ icon, githubUrl, title, linkText }) => (
-  <Card>
-    <CardImg src={icon} />
-    <CardContent>
-      <span>{title}</span>
-      <p>
-        <a href={githubUrl}>{linkText}</a>
-      </p>
-    </CardContent>
-    <a href={githubUrl}>
-      <ForkMeGithub
-        src={forkmeimg}
-        alt="Fork me on GitHub"
-      />
-    </a>
-  </Card>
+  </ProjectsContainer>
 );
 
 export default ProjectsPage;
