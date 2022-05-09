@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Logo from "./logo";
 import { NavList } from "./NavList";
@@ -15,7 +15,6 @@ const Overlay = styled.div`
   visibility: ${props => (props.open ? "visible" : "hidden")};
   transition: opacity 0.35s, visibility 0.35s, height 0.35s;
   overflow: hidden;
-  padding-top: 60px;
   z-index: 10;
 `;
 
@@ -67,6 +66,14 @@ export const MobileMenu = () => {
     setIsToggle(!isToggle);
   };
 
+  useEffect(() => {
+    window.addEventListener("keydown", e => {
+      if (e.key === "Escape" && isToggle) {
+        setIsToggle(false);
+      }
+    });
+  }, [isToggle]);
+
   return (
     <StyledWrapper>
       <Header>
@@ -77,7 +84,7 @@ export const MobileMenu = () => {
       </Header>
       <Overlay open={isToggle}>
         <SideNav>
-          <NavList />
+          <NavList onClick={handleClick} />
         </SideNav>
       </Overlay>
     </StyledWrapper>

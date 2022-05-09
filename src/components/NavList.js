@@ -36,7 +36,7 @@ const LinkList = styled.ul`
   margin: 0;
 `;
 
-export const NavList = () => (
+export const NavList = ({ onClick }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -54,7 +54,7 @@ export const NavList = () => (
           data-sal-duration="400"
         >
           <li>
-            <SideLink to="/">Home</SideLink>
+            <SideLink onClick={onClick} to="/">Home</SideLink>
           </li>
         </div>
         <div
@@ -64,7 +64,7 @@ export const NavList = () => (
           data-sal-duration="400"
         >
           <li>
-            <SideLink to="/projects">Projects</SideLink>
+            <SideLink onClick={onClick} to="/projects">Projects</SideLink>
           </li>
         </div>
         <div
@@ -74,7 +74,7 @@ export const NavList = () => (
           data-sal-duration="400"
         >
           <li>
-            <SideLink to="/blog/">Blog</SideLink>
+            <SideLink onClick={onClick} to="/blog/">Blog</SideLink>
           </li>
         </div>
         <div
@@ -84,7 +84,7 @@ export const NavList = () => (
           data-sal-duration="400"
         >
           <li>
-            <SideLink to="/about">About</SideLink>
+            <SideLink onClick={onClick} to="/about">About</SideLink>
           </li>
         </div>
         <div
@@ -94,7 +94,7 @@ export const NavList = () => (
                   data-sal-duration="400"
         >
           <li>
-            <SideLink to="/contact">Contact</SideLink>
+            <SideLink onClick={onClick} to="/contact">Contact</SideLink>
           </li>
         </div>
         <div
