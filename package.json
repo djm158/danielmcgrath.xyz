@@ -19,7 +19,7 @@
     "gatsby-remark-prismjs": "^3.2.6",
     "gatsby-source-dropbox": "^0.1.1",
     "gatsby-source-filesystem": "^2.0.28",
-    "gatsby-transformer-remark": "^2.3.8",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.1.17",
     "install": "^0.13.0",
     "npm": "^6.10.2",
