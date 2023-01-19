@@ -13,7 +13,7 @@ const IndexPage = () => {
         <p>I'm Dan.</p>
         <p>
           I'm a full stack developer at{" "}
-          <a href="https://www.wizehive.com/">WizeHive</a> based in
+          <a href="https://formidable.com/">Formidable</a> based in
           Conshohocken.
         </p>
         <p>
